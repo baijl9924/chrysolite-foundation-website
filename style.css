@@ -1031,3 +1031,164 @@ select.form-control { padding-right: 2.2rem; }
 
 /* Belt and braces: nothing should ever scroll the page sideways. */
 html, body { max-width: 100%; overflow-x: clip; }
+
+/* ==========================================================================
+   PHOTOGRAPHY LAYER
+   The template's original design used real photographs. This restores that:
+   a photographic hero, photo cards, and paired portraits — rather than the
+   abstract SVG placeholders used in the first pass.
+   ========================================================================== */
+
+/* ---- Hero over a photograph ----------------------------------------------
+   White text sits on top of a photo, so it needs a scrim to stay readable.
+   The gradient is strongest on the left (where the heading is) and lets the
+   image breathe on the right. */
+#intro.hero-photo { position: relative; overflow: hidden; }
+#intro.hero-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(100deg,
+      rgba(8, 24, 14, 0.95) 0%,
+      rgba(11, 33, 20, 0.90) 34%,
+      rgba(16, 46, 27, 0.72) 62%,
+      rgba(18, 52, 31, 0.50) 100%),
+    radial-gradient(110% 80% at 82% 28%, rgba(143, 191, 63, 0.16) 0%, transparent 62%);
+}
+#intro.hero-photo .container { position: relative; z-index: 2; }
+/* jarallax paints the <img> behind the section — keep it that way */
+#intro.hero-photo .jarallax-img { z-index: 0; }
+
+/* ---- Photo cards ---------------------------------------------------------
+   Same footprint as the old .card-dark, but with a photograph and a scrim
+   that darkens towards the bottom so the copy stays legible. */
+.card-photo {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: flex-end;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--dark-color);
+  background-size: cover;
+  background-position: center 28%;
+  color: #fff;
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+.card-photo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 48px rgba(8, 24, 14, 0.32);
+}
+.card-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(8, 24, 14, 0.12) 0%,
+    rgba(8, 24, 14, 0.55) 42%,
+    rgba(8, 24, 14, 0.90) 78%,
+    rgba(8, 24, 14, 0.96) 100%);
+}
+.card-photo .card-body { position: relative; z-index: 1; padding: 1.5rem 1.6rem 1.6rem; }
+.card-photo h3 {
+  color: var(--accent-color);
+  font-size: 1.18rem;
+  margin-bottom: .5rem;
+}
+.card-photo p { color: rgba(255, 255, 255, 0.90); font-size: .95rem; margin-bottom: .7rem; }
+.card-photo a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration-line: underline;
+  text-underline-offset: 3px;
+}
+.card-photo a:hover { color: var(--accent-color); }
+
+/* ---- Paired portraits ----------------------------------------------------
+   Two faces side by side — used where a single image would feel impersonal. */
+.photo-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  height: 100%;
+  min-height: 320px;
+}
+.photo-pair img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+.photo-pair img:nth-child(2) { margin-top: 26px; }
+@media (max-width: 575.98px) {
+  .photo-pair { min-height: 240px; }
+  .photo-pair img { min-height: 240px; }
+  .photo-pair img:nth-child(2) { margin-top: 0; }
+}
+
+/* ---- Generic photo treatment --------------------------------------------
+   Story tiles, article images and section images all get the same radius. */
+.post-item img,
+.article-body img,
+.photo-figure img {
+  border-radius: 14px;
+  display: block;
+}
+.post-item img { aspect-ratio: 8 / 5; object-fit: cover; }
+
+/* ---- Photo caption ------------------------------------------------------- */
+.photo-credit {
+  font-size: .78rem;
+  color: var(--light-text-color);
+  margin-top: .5rem;
+  margin-bottom: 0;
+}
+
+/* ---- Readability fix for photo cards ----
+   The first scrim was too gentle: on bright areas of the photograph the card
+   headings washed out. This deepens the gradient much earlier and adds a
+   text-shadow as a second line of defence. */
+.card-photo::before {
+  background: linear-gradient(180deg,
+    rgba(8, 24, 14, 0.18) 0%,
+    rgba(8, 24, 14, 0.42) 26%,
+    rgba(8, 24, 14, 0.74) 46%,
+    rgba(8, 24, 14, 0.92) 66%,
+    rgba(8, 24, 14, 0.97) 100%);
+}
+.card-photo .card-body { text-shadow: 0 1px 12px rgba(8, 24, 14, 0.65); }
+.card-photo h3 { color: #C6E88A; text-shadow: 0 1px 14px rgba(8, 24, 14, 0.85); }
+.card-photo p  { color: rgba(255, 255, 255, 0.95); }
+.card-photo a  { text-shadow: 0 1px 10px rgba(8, 24, 14, 0.8); }
+
+/* Keep the hero heading clear of the card row on tall headings */
+#intro.hero-photo .section-title { margin-bottom: 1.5rem; }
+#intro.hero-photo .section-title h2 { margin-bottom: 0; }
+
+/* ---- Fix: photo card content was not bottom-aligned ----
+   Bootstrap's .card sets `flex-direction: column`, so `align-items: flex-end`
+   was aligning the copy to the RIGHT edge, not the bottom — which parked the
+   text over the brightest part of the photograph. In a column flex container
+   the main axis is vertical, so bottom alignment needs `justify-content`. */
+.card-photo {
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+}
+
+/* ---- Fix (second attempt): .card-body fills the card ----
+   Bootstrap's .card-body carries `flex: 1 1 auto`, so it stretches to the full
+   height of the card and `justify-content` on the card itself does nothing.
+   The bottom alignment has to happen INSIDE the card-body. */
+.card-photo .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+}
+.card-photo .card-body p { margin-bottom: .8rem; }

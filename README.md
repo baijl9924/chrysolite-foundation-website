@@ -44,7 +44,9 @@ footer, buy a commercial licence from TemplatesJungle or commission a bespoke de
 - All brand colours replaced with the Chrysolite palette (see §2)
 - All template copy replaced with content based on the foundation's real programmes
 - Custom brand layer appended to `style.css` (components the template did not have)
-- New SVG brand assets: logo mark, hero background, CTA background, social share card, photo placeholders
+- New SVG brand assets: logo mark, hero background, CTA background, social share card
+- 14 licensed photographs added under `images/photos/` to replace the template's abstract
+  SVG placeholders — see §4 and `NOTICE.md`
 - New `js/chrysolite.js` for donation amounts, form handling and anchor offsets
 - Pages restructured: 8 pages instead of the template's original set
 - Removed unused template pages (`blog.html`, `contact.php`, `styles.html`, `readme.txt`, etc.)
@@ -85,29 +87,30 @@ There is also a gold accent `#E0A72C` used sparingly in the logo and social card
 ├── get-involved.html       Donate, volunteer, partner, FAQ
 ├── contact.html            Contact details, message form, support request guide, map
 ├── style.css               Template stylesheet + Chrysolite brand & component layers
-├── style.css.bak           Backup of the stylesheet before colour replacement
 ├── favicon.svg             Gem favicon
 ├── robots.txt              Crawler rules
 ├── sitemap.xml             Sitemap — update if you add or rename pages
+├── NOTICE.md               Attribution and image licensing
 ├── css/vendor.css          Template vendor styles
-├── fonts/                  Template fonts
+├── fonts/                  Template icon font — not referenced by any page, safe to delete
 ├── images/
+│   ├── photos/                 14 programme photographs (stock — replace with your own)
 │   ├── logo-mark.svg           Hexagonal peridot gem logo
 │   ├── hero-bg.svg             Dark forest hero background
 │   ├── cta-bg.svg              CTA band background
 │   ├── og-cover.svg            1200×630 social share card
-│   └── story-placeholder-1..5.svg   Branded photo placeholders — replace these
+│   ├── certificate-placeholder.svg   CAC certificate stand-in — replace with a photo
+│   └── trustee-placeholder.svg       Trustee portrait stand-in — replace with a photo
 ├── js/
 │   ├── chrysolite.js       Site behaviour (donations, forms, year, anchor offset)
 │   ├── script.js           Template behaviour (lightbox, parallax, scroll nav)
 │   └── …                   jQuery, Bootstrap bundle, Modernizr, plugins
-├── plugins/bootstrap-5.1.3/
-├── _draft-custom/          Earlier hand-written draft — safe to delete
-└── _oss-preview/           Template comparison previews — safe to delete
+└── plugins/bootstrap-5.1.3/
 ```
 
-**Before publishing**, delete `_draft-custom/` and `_oss-preview/`. They are working folders,
-not part of the site, and they are excluded in `robots.txt` but should still be removed.
+Working folders (`_draft-custom/`, `_oss-preview/`, `_shots/`, `style.css.bak`) have been moved
+out of the repository into `../_workfiles/` and are listed in `.gitignore`. Nothing outside the
+tree above is part of the published site.
 
 ---
 
@@ -126,26 +129,66 @@ sed -i 's/+2348067359596/+2348000000000/g; s/+234 80 67 35 95 96/+234 80 00 00 0
 Also update the structured data (`application/ld+json`) in `index.html` and `contact.html`,
 and the `telephone` / `email` values there.
 
+> **Address note.** The site currently shows *Juli Alice Hall, Cilareta Filling Station,
+> Oluyole Estate Road, Oluyole, Ibadan* as the street address. The foundation's **CAC
+> registration record** (reg. no. 7008093) lists *NO 1, Oduduwa Road, University of Ibadan,
+> Ibadan, Oyo*. If these are the programme office and the registered office respectively,
+> label them as such on `contact.html` rather than showing only one.
+
 ### Add a story
 1. Copy `single-post.html` to a new file, e.g. `stories-ray-of-hope-5.html`
 2. Replace the title, meta description, canonical URL, body text and image
 3. Open `stories.html` and add a new tile in the listing, pointing at the new file
 4. Add the URL to `sitemap.xml`
 
-### Replace the placeholder images
-The five `story-placeholder-*.svg` files are branded stand-ins, not real photographs.
-Replace them with real photos from your events:
+### Replace the photography ⚠️
+`images/photos/` holds **14 stock photographs**. They are real, licensed images (Pixabay
+Content Licence — free for commercial use, no attribution required) chosen so every layout
+reads correctly and no page ships with an empty box. **They are not pictures of Chrysolite
+Foundation's programmes.** No caption claims they are, but a visitor will assume they are,
+so replace them before the site is presented as the foundation's own record.
 
-1. Crop photos to roughly **800 × 500** (the placeholders' ratio is 8:5)
-2. Save as `.jpg` at ~80% quality to keep the page fast
-3. Put them in `images/`
-4. Update the `src` in the relevant HTML files
+There are two ratios in use. Match whichever slot you are filling:
 
-The placeholders are referenced in `index.html`, `about.html`, `shop.html`, `stories.html`,
-`single-post.html` and `contact.html`. Search for `story-placeholder` to find every use.
+| Ratio | Pixels | Used by | Files |
+|---|---|---|---|
+| **8:5** landscape | 800 × 500 | shop product tiles, article body images | `shop-fabric`, `shop-bag`, `shop-yarn`, `training-sewing`, `community-group` |
+| **3:2** portrait | 853 × 1066 | hero, feature cards, story tiles, portraits | `hero-*`, `laughing-child`, `girl-portrait`, `boy-portrait`, `smiling-girl`, `schoolchildren`, `hero-student` |
 
-Also replace `images/og-cover.svg` — or add a real photo as `images/og-cover.jpg` and update
-the `og:image` meta tag on each page. A real photo makes shared links far more effective.
+The site crops with `object-fit: cover` / `background-size: cover`, so a replacement does not
+have to be the exact pixel size — but keep the **orientation** right. Dropping a landscape
+photo into a portrait slot will crop away the subject.
+
+**To swap one, overwrite the file with the same name.** No HTML change is needed:
+
+```bash
+# example: put a real Ray of Hope 4.0 photo in place of the stock one
+cp ~/photos/ray-of-hope-4-group.jpg images/photos/community-group.jpg
+```
+
+To find every use of a given photo, search for its filename:
+
+```bash
+grep -rn "images/photos/" *.html | sort
+```
+
+Then check the result — `_shots`-style tooling is not part of the repo, so eyeball each page
+after a swap.
+
+### The two remaining placeholders
+`images/certificate-placeholder.svg` and `images/trustee-placeholder.svg` are **deliberately
+not photographs**. A stock image of an unrelated certificate, or of unrelated people
+presented as trustees, would be actively misleading. Each SVG carries a visible instruction
+on the artwork itself so it cannot go live unnoticed. Replace them with:
+
+- a scan or photo of the foundation's **CAC certificate** (IT/7008093)
+- real headshots of the trustees, cropped to 4:5
+
+### Replace the social share card
+`images/og-cover.svg` is the image shown when a page is shared on WhatsApp, Facebook or X.
+An SVG is not supported by most platforms — add a real photo as `images/og-cover.jpg`
+(1200 × 630) and update the `og:image` meta tag on all 8 pages. A real photo makes shared
+links far more effective than a logo card.
 
 ### Update the amounts in the donation section
 The "what your gift goes towards" table in `get-involved.html` uses indicative figures.
@@ -295,13 +338,11 @@ Once `chrysolitefoundation.ng` is registered and pointed at your host, also upda
 
 ## 10. Before you go live — checklist
 
-- [ ] Delete `_draft-custom/` and `_oss-preview/`
-- [ ] Connect all four forms and test each one end to end (§5)
-- [ ] Confirm the Flutterwave donation link works and pays the right account (§6)
-- [ ] Confirm the Selar shop link works (§7)
-- [ ] Replace the five placeholder images with real photographs (§4)
+- [ ] Replace the 14 stock photographs in `images/photos/` with real programme photos (§4)
+- [ ] Replace `certificate-placeholder.svg` and `trustee-placeholder.svg` (§4)
 - [ ] Replace `og-cover.svg` with a real photo for social sharing
 - [ ] Confirm the real domain and update canonical URLs, `robots.txt`, `sitemap.xml` (§9)
+- [ ] Reconcile the two addresses — Oluyole (site) vs Oduduwa Road (CAC record) (§4)
 - [ ] Verify the TemplatesJungle footer credit is still present on all 8 pages (§1)
 - [ ] Test on a phone — most visitors will arrive on mobile
 - [ ] Check the address, phone and email are correct in the footer of all pages
@@ -324,8 +365,45 @@ assumptions. Where a number is an estimate rather than a verified figure, the pa
 | Back to School — 3rd edition; ₦1,000 as indicative per-pupil cost | Foundation's own activity records |
 | "100% of these sales contribute to future trainings" | Foundation's Selar store |
 | Address, phone, social profiles | Foundation's public profiles |
+| CAC registration recognised by Goodstack (unclaimed) | Goodstack organisation record |
 
 If any figure changes, update it here and on the page that cites it.
+
+### The Goodstack record
+
+Goodstack is the nonprofit-verification service behind the charity discounts offered by Zoom,
+Asana, Atlassian, Adobe, OpenAI and others. The foundation **is already in Goodstack's
+registry-backed database**, sourced from its CAC record:
+
+| Field | Value |
+|---|---|
+| Goodstack ID | `organisation_000000CmCZg1necqCZ5hKYoGDXX96` |
+| Registry | CAC — Corporate Affairs Commission / CAC (Nigeria) |
+| Registry ID | 7008093 |
+| Registered address | NO 1, Oduduwa Road, University of Ibadan, Ibadan, Nigeria |
+| Record created | 2024-01-21 |
+| Type | nonprofit |
+| **Claimed** | **No** (`claimedAt: null`) |
+
+Two consequences:
+
+1. **Nobody has claimed the record.** Until someone at the foundation does, the foundation
+   cannot use it to unlock the nonprofit discounts. Claim it at
+   https://causes.goodstack.io/claim — the CAC number **7008093** is the credential the
+   claim flow asks for.
+2. **The record has no website.** Adding `chrysolitefoundation.ng` to the claimed profile is
+   itself a benefit: it is what the discount providers check to confirm the organisation is
+   real and operating.
+
+To re-verify the record at any time:
+
+```bash
+curl -s -H "Authorization: <goodstack-pk-key>" \
+  "https://api.goodstack.io/v1/organisations/?countryCode=NGA&pageSize=100" \
+  | grep -i -A3 chrysolite
+```
+
+The record can change — re-check before relying on the details above.
 
 ---
 

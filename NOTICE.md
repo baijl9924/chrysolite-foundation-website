@@ -6,7 +6,10 @@
 Registered Incorporated Trustees · IT/7008093 · TIN 2620089007465.
 Juli Alice Hall, Cilareta Filling Station, Oluyole Estate Road, Oluyole, Ibadan, Oyo State, Nigeria.
 
-All written content, photography, logo and brand assets on this site belong to the foundation.
+All written content, the logo mark and the brand assets on this site belong to the foundation.
+
+The photographs in `images/photos/` are **stock imagery**, not the foundation's own
+records — see §Images below.
 
 ## Underlying template
 
@@ -48,6 +51,27 @@ template's original icon font and is not referenced by any page — it can be de
 
 ## Images
 
-All images currently in `images/` are original SVG assets created for this site
-(logo, backgrounds, social card, and branded photo placeholders). The placeholders are
-intended to be replaced with real photographs of the foundation's programmes.
+| Set | Files | Source | Licence |
+|---|---|---|---|
+| Programme photography | `images/photos/*.jpg` (14) | Pixabay | Pixabay Content Licence — free for commercial use, **no attribution required**, no permission needed |
+| Brand assets | `images/logo-mark.svg`, `favicon.svg`, `og-cover.svg`, `hero-bg.svg`, `cta-bg.svg` | Created for this site | © the foundation |
+| Pending placeholders | `images/certificate-placeholder.svg`, `images/trustee-placeholder.svg` | Created for this site | Replace with the foundation's own material |
+
+**The 14 photographs are stand-ins.** They are real, licensed photographs chosen so the
+layout reads correctly and so no page ships with an empty grey box — they are **not**
+pictures of Chrysolite Foundation's programmes, and no caption on the site claims they are.
+Before this site is used as the foundation's public record, replace each one with a real
+photograph from a Ray of Hope edition, a training cohort or a Back to School handover.
+
+To swap a photograph, drop the replacement into `images/photos/` under the same filename —
+no HTML change is needed. All photos are referenced by filename from `index.html`,
+`about.html`, `programs.html`, `shop.html`, `stories.html`, `single-post.html`,
+`get-involved.html` and `contact.html`. Search for `images/photos/` to find every use.
+
+The two SVG placeholders are deliberately **not** photographs: a stock photo of an unrelated
+certificate or of unrelated people presented as trustees would be misleading. They carry
+visible instructions on the artwork itself so they cannot be shipped unnoticed.
+
+Note that the Pixabay licence permits commercial use without attribution, so no credit line
+is legally required for these 14 files. If the foundation prefers to credit them anyway,
+add the credit to the footer of `index.html`.
