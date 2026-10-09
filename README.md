@@ -91,6 +91,7 @@ There is also a gold accent `#E0A72C` used sparingly in the logo and social card
 ├── robots.txt              Crawler rules
 ├── sitemap.xml             Sitemap — update if you add or rename pages
 ├── NOTICE.md               Attribution and image licensing
+├── GOODSTACK.md            How the non-profit registration was verified, with raw evidence
 ├── css/vendor.css          Template vendor styles
 ├── fonts/                  Template icon font — not referenced by any page, safe to delete
 ├── images/
@@ -381,7 +382,7 @@ registry-backed database**, sourced from its CAC record:
 | Registry | CAC — Corporate Affairs Commission / CAC (Nigeria) |
 | Registry ID | 7008093 |
 | Registered address | NO 1, Oduduwa Road, University of Ibadan, Ibadan, Nigeria |
-| Record created | 2024-01-21 |
+| Record created | 2024-01-21 · registration active |
 | Type | nonprofit |
 | **Claimed** | **No** (`claimedAt: null`) |
 
@@ -395,13 +396,9 @@ Two consequences:
    itself a benefit: it is what the discount providers check to confirm the organisation is
    real and operating.
 
-To re-verify the record at any time:
-
-```bash
-curl -s -H "Authorization: <goodstack-pk-key>" \
-  "https://api.goodstack.io/v1/organisations/?countryCode=NGA&pageSize=100" \
-  | grep -i -A3 chrysolite
-```
+**Full source chain, raw API responses and re-verification commands: [`GOODSTACK.md`](GOODSTACK.md).**
+That document also records why the local `orgs.jsonl` snapshot must not be used to prove a
+negative — it holds 100 of Nigeria's 4,963 registered non-profits.
 
 The record can change — re-check before relying on the details above.
 
