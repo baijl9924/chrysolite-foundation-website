@@ -1,0 +1,21 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# Working folders kept out of the published site
+_workfiles/
+_workfiles-backup/
+_oss-preview/
+_draft-custom/
+_shots/
+
+# Stylesheet backup
+style.css.bak
+
+# Local dev
+.vscode/
+.idea/
+*.log

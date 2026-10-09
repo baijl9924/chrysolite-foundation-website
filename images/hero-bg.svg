@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="hb-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#08190E"/>
+      <stop offset=".5" stop-color="#12341F"/>
+      <stop offset="1" stop-color="#1E4C31"/>
+    </linearGradient>
+    <radialGradient id="hb-glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#8FBF3F" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#8FBF3F" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hb-glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#E0A72C" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#E0A72C" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hb-gem" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A8D158"/>
+      <stop offset="1" stop-color="#5C8A1E"/>
+    </linearGradient>
+    <pattern id="hb-dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1.7" fill="#F2F8E6" fill-opacity=".16"/>
+    </pattern>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#hb-bg)"/>
+  <rect width="1920" height="1080" fill="url(#hb-dots)"/>
+
+  <circle cx="1560" cy="200" r="560" fill="url(#hb-glow1)"/>
+  <circle cx="240" cy="960" r="520" fill="url(#hb-glow2)"/>
+
+  <!-- growth arcs -->
+  <g fill="none" stroke="#F2F8E6" stroke-opacity=".13" stroke-width="2">
+    <circle cx="1620" cy="180" r="300"/>
+    <circle cx="1620" cy="180" r="420"/>
+    <circle cx="1620" cy="180" r="540"/>
+    <circle cx="1620" cy="180" r="660"/>
+  </g>
+
+  <!-- large gem, right -->
+  <g transform="translate(1400 300) scale(3.4)" opacity=".9">
+    <path d="M24 0 L44 13 L44 37 L24 50 L4 37 L4 13 Z" fill="url(#hb-gem)"/>
+    <path d="M24 0 L44 13 L24 20 L4 13 Z" fill="#FFFFFF" fill-opacity=".3"/>
+    <path d="M24 20 L15 25 L24 46 L33 25 Z" fill="#FFFFFF" fill-opacity=".18"/>
+    <path d="M24 0 L44 13 L44 37 L24 50 L4 37 L4 13 Z" fill="none" stroke="#F2F8E6" stroke-opacity=".45" stroke-width="1.2" stroke-linejoin="round"/>
+  </g>
+
+  <!-- leaves, bottom left -->
+  <g transform="translate(120 720)">
+    <path d="M0 300 C 20 200, 130 130, 260 118 C 250 220, 150 296, 0 300 Z" fill="url(#hb-gem)" opacity=".55"/>
+    <path d="M0 300 C 70 232, 160 168, 260 118" fill="none" stroke="#F2F8E6" stroke-opacity=".22" stroke-width="3"/>
+    <path d="M60 330 C 84 262, 150 216, 232 208 C 224 276, 160 324, 60 330 Z" fill="url(#hb-gem)" opacity=".34"/>
+  </g>
+
+  <!-- accent dots -->
+  <circle cx="1180" cy="820" r="9" fill="#F0C25C" opacity=".8"/>
+  <circle cx="1080" cy="900" r="6" fill="#F2F8E6" opacity=".4"/>
+  <circle cx="420" cy="220" r="7" fill="#A8D158" opacity=".65"/>
+</svg>

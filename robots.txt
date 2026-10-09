@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Preview folders kept out of the published site
+Disallow: /_draft-custom/
+Disallow: /_oss-preview/
+
+Sitemap: https://chrysolitefoundation.ng/sitemap.xml
