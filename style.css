@@ -1275,6 +1275,23 @@ html, body { max-width: 100%; overflow-x: clip; }
 }
 .post-item img { aspect-ratio: 8 / 5; object-fit: cover; }
 
+/* ---- Reserve space for content images ------------------------------------
+   An <img> with no width/height attributes reserves no space until the file
+   downloads, so the page reflows underneath the reader once it arrives. On
+   about.html that shift is ~222px, which is what makes a footer link to
+   #governance land short of its target, and what shows up as CLS in PageSpeed.
+   The attributes give the browser the aspect ratio up front; height:auto keeps
+   the rendered height proportional to the CSS width instead of pinning it to
+   the attribute value.
+
+   :where() is deliberate — it contributes zero specificity, so this rule is
+   weaker than every class rule in the file. .photo-pair img sets height:100%
+   with object-fit:cover on purpose (two photos filling the column height), and
+   a plain img[width][height] selector outranked it and flattened that design. */
+img:where([width][height]) {
+  height: auto;
+}
+
 /* ---- Photo caption ------------------------------------------------------- */
 .photo-credit {
   font-size: .78rem;
