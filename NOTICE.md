@@ -54,23 +54,27 @@ template's original icon font and is not referenced by any page — it can be de
 | Set | Files | Source | Licence |
 |---|---|---|---|
 | Programme photography | `images/photos/*.jpg` (14) | Pixabay | Pixabay Content Licence — free for commercial use, **no attribution required**, no permission needed |
+| Registration document | `images/certificate.jpg` | Supplied by the foundation | The foundation's own CAC certificate — published unmodified |
 | Brand assets | `images/logo-mark.svg`, `favicon.svg`, `og-cover.svg`, `hero-bg.svg`, `cta-bg.svg` | Created for this site | © the foundation |
-| Pending placeholder | `images/certificate-placeholder.svg` | Created for this site | Replace with the foundation's own material |
 
-**The 14 photographs are stand-ins.** They are real, licensed photographs chosen so the
-layout reads correctly and so no page ships with an empty grey box — they are **not**
-pictures of Chrysolite Foundation's programmes, and no caption on the site claims they are.
-Before this site is used as the foundation's public record, replace each one with a real
-photograph from a Ray of Hope edition, a training cohort or a Back to School handover.
+**The 14 photographs are stock, and they stay that way.** They are real, licensed photographs
+chosen so the layout reads correctly and so no page ships with an empty grey box — they are
+**not** pictures of Chrysolite Foundation's programmes. The foundation does not release images of
+the children it works with, so this is a settled decision rather than a placeholder.
+
+Because a visitor would otherwise reasonably assume the children in the hero image are the
+foundation's beneficiaries, the footer of all 8 pages carries a short `.footer-disclosure` line
+stating that the photographs are licensed stock images and that the foundation does not publish
+pictures of the children. Keep that line.
 
 To swap a photograph, drop the replacement into `images/photos/` under the same filename —
 no HTML change is needed. All photos are referenced by filename from `index.html`,
 `about.html`, `programs.html`, `shop.html`, `stories.html`, `single-post.html`,
 `get-involved.html` and `contact.html`. Search for `images/photos/` to find every use.
 
-The remaining SVG placeholder is deliberately **not** a photograph: a stock photo of an unrelated
-certificate would be misleading. It carries a visible instruction on the artwork itself so it
-cannot be shipped unnoticed.
+`images/certificate.jpg` is the foundation's actual CAC Certificate of Incorporation. It is
+published as supplied — **do not retouch, crop or enhance it.** A doctored registration document
+is worse than none. It replaced `certificate-placeholder.svg`, which has been deleted.
 
 The seven team cards on `about.html` use **initials monograms**, not photographs, for the same
 reason — no portrait of these people exists in any usable source. A monogram cannot be mistaken

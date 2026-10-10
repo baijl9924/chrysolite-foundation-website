@@ -1,22 +1,34 @@
 # What the site still needs from the foundation
 
-**The site is finished and can go live today.** Donations, the shop link, the contact details
-and all four forms work. Nothing below is a blocker — each item makes the site *accurate and
-personal* rather than *generic*.
+**The site is finished and can go live today.** Donations, the shop link, the contact details, the
+certificate and all four forms work. Nothing below is a blocker — each item makes the site
+*accurate and personal* rather than *generic*.
 
 Items are ordered by how much they improve the site per unit of effort.
 
+**Already settled — please don't reopen these:**
+
+- **Photographs.** The foundation does not release images of the children it works with, so the
+  site uses licensed stock photographs, permanently. The footer of every page says so in plain
+  words. §A below is kept only as a shopping list in case that decision ever changes.
+- **The CAC certificate.** Received and published unmodified on the About page. §B is done.
+
 ---
 
-## A. Photographs — by far the biggest improvement
+## A. Photographs — settled, kept as a shopping list only
 
-The site currently uses 14 stock photographs. They look right, but they are strangers. Replacing
-them with the foundation's own pictures is the single change that turns this from "a nice
-website" into "our website".
+The foundation has decided **not** to publish photographs of the children it works with. That is
+the right call, and it is now the site's permanent design: `images/photos/` holds 14 licensed
+stock photographs (Pixabay — commercial use permitted, no attribution required), and the footer
+of all 8 pages states plainly that they are stock images and that the foundation does not publish
+pictures of the children.
 
-**How to send them:** original files, no screenshots, no WhatsApp compression if avoidable.
-Anything over ~1600px wide is plenty. Keep the same orientation as the file it replaces — the
-site crops to fit, so a portrait photo cannot fill a landscape slot.
+Nothing is needed here. What follows is kept only so that, if the foundation ever reverses the
+decision, the specifications are already written down.
+
+**If that ever happens — how to send them:** original files, no screenshots, no WhatsApp
+compression if avoidable. Anything over ~1600px wide is plenty. Keep the same orientation as the
+file it replaces — the site crops to fit, so a portrait photo cannot fill a landscape slot.
 
 | Replace this file | Orientation | Where it appears | What to send |
 |---|---|---|---|
@@ -35,15 +47,16 @@ site crops to fit, so a portrait photo cannot fill a landscape slot.
 | `boy-portrait.jpg` | tall | Home, problem section | A portrait of a boy — portrait orientation |
 | `girl-portrait.jpg` | tall | Home + story tiles | A portrait of a girl — portrait orientation |
 
-> **Consent matters.** This is a site about children. Only send photographs where the foundation
-> has the parent's or guardian's permission to publish them. If a photo cannot be published,
-> don't send it — the stock photos are a safe fallback until real ones exist.
+> **If that decision is ever reversed, consent comes first.** This is a site about children. Only
+> publish a photograph where the foundation holds the parent's or guardian's permission to publish
+> it. If it cannot be published, it does not go on the site — the stock photographs remain the
+> fallback, and they are a perfectly good one.
 
-### A2. Portraits of the seven people named on the About page
+### A2. Portraits of the seven people named on the About page — still open
 
-The team cards currently show **initials monograms** — "EM", "CO", "VA" and so on. They are
-clean and they are honest, but a real face is what makes a small non-profit feel like people
-rather than a letterhead.
+This is a separate question from §A, and it is **not** settled: the seven adults on the team are
+not children, and a real face is what makes a small non-profit feel like people rather than a
+letterhead. It is now the single biggest remaining improvement to the site.
 
 | Person | Role | What to send |
 |---|---|---|
@@ -64,11 +77,15 @@ credited differently — or if anyone is missing — tell us and the cards chang
 
 ---
 
-## B. Documents
+## B. Documents — done
 
-| What | Why | Format |
-|---|---|---|
-| A clear photograph or scan of the **CAC Certificate of Incorporation** | It currently shows a marked placeholder on the About page. Showing the certificate is the strongest trust signal a Nigerian non-profit can give a donor. | JPEG or PNG, legible, all four corners in frame |
+The foundation supplied the **CAC Certificate of Incorporation**, and it is now published
+unmodified on the About page (`images/certificate.jpg`), replacing the placeholder that was there.
+
+One small thing, if it is easy: the copy we have is 765 × 1024. It is legible on screen but only
+just, and the QR code in the bottom-left corner is too small to decode from it. **If the original
+PDF still exists, a higher-resolution export would be a straight improvement** — same file, just
+crisper. Not urgent.
 
 Optional, only if the foundation wants them published: the TIN document, and any current
 annual return or tax-exemption letter.
@@ -77,20 +94,27 @@ annual return or tax-exemption letter.
 
 ## C. The registered trustees — still unknown
 
-The team section is now filled in from the *Nigerian Tribune* (§A2 above). What is still missing
-is a different group of people: the **trustees named on the CAC certificate**.
+The team section is filled in from the *Nigerian Tribune* (§A2 above). What is still missing is a
+different group of people: the **trustees on the CAC register**.
 
-For an Incorporated Trustees in Nigeria, the Certificate of Incorporation names the trustees,
-and they are the people legally answerable for the organisation. The About page currently shows
-the registration table without naming them, which leaves an obvious question hanging.
+**Correction to an earlier assumption of ours.** We had written that the certificate would name
+them. It does not. Having now seen the actual document: a Nigerian CAC Certificate of
+Incorporation carries the organisation's name, the community registration number, the date, the
+Registrar-General's name and the TIN — **but not the trustees.** So the certificate does not
+answer this question.
 
-We will not guess. Two ways to supply them:
+Where the names actually are:
 
-- send the **CAC certificate photograph** (§B) — the names are printed on it, or
-- send the names and roles in the same format as the team list
+- the **CAC public search portal** — https://search.cac.gov.ng/, searched by registration number
+  **IT/7008093** (the search result lists the trustees), or
+- the foundation's own **Form CAC 1.1** (the incorporation application), which names them and
+  which the foundation will have on file
+
+Either source works. If it is easier, just type the names and roles into a message in the same
+format as the team list.
 
 They may turn out to be the same people as the delivery team, or they may not. Either answer is
-fine — we just want the published list to be the real one.
+fine — we just want the published list to be the real one, and we will not guess it.
 
 ---
 
@@ -155,8 +179,7 @@ takes about ten minutes to set up. Say the word and we will wire it up.
   permission**, since displaying a logo implies endorsement.
 - **Bank transfer details** — for donors who prefer a direct transfer to Flutterwave.
 - **An annual report or impact PDF** — we can host it and link it from the Stories page.
-- **Photographs of a real event in progress** — for the Stories page, which currently uses
-  stock images.
+- **A higher-resolution copy of the certificate**, if the original PDF still exists (§B).
 
 ---
 
@@ -169,6 +192,8 @@ So nobody re-checks it:
 - ✅ Contact details — real email and both phone numbers, sourced from the foundation's own site
 - ✅ All four forms — functional today via the visitor's email app
 - ✅ CAC registration, TIN, incorporation date — from the certificate
+- ✅ **The CAC certificate itself** — published unmodified on the About page
+- ✅ Photography — licensed stock images, permanent by decision, disclosed in every footer
 - ✅ Team names and roles — seven people, all traceable to the *Nigerian Tribune*, 7 Oct 2023
 - ✅ Programme facts — venue, age range, six-week format, the four crafts, The AID NG partnership
 - ✅ Goodstack record — located and documented; **unclaimed**, which is free to fix

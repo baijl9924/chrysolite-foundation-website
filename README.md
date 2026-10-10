@@ -96,12 +96,12 @@ There is also a gold accent `#E0A72C` used sparingly in the logo and social card
 ├── css/vendor.css          Template vendor styles
 ├── fonts/                  Template icon font — not referenced by any page, safe to delete
 ├── images/
-│   ├── photos/                 14 programme photographs (stock — replace with your own)
+│   ├── photos/                 14 programme photographs (licensed stock, kept by design)
+│   ├── certificate.jpg         CAC Certificate of Incorporation — the real document
 │   ├── logo-mark.svg           Hexagonal peridot gem logo
 │   ├── hero-bg.svg             Dark forest hero background
 │   ├── cta-bg.svg              CTA band background
-│   ├── og-cover.svg            1200×630 social share card
-│   └── certificate-placeholder.svg   CAC certificate stand-in — replace with a photo
+│   └── og-cover.svg            1200×630 social share card
 ├── js/
 │   ├── chrysolite.js       Site behaviour (donations, forms, year, anchor offset)
 │   ├── script.js           Template behaviour (lightbox, parallax, scroll nav)
@@ -176,15 +176,36 @@ grep -rn "images/photos/" *.html | sort
 Then check the result — `_shots`-style tooling is not part of the repo, so eyeball each page
 after a swap.
 
-### The one remaining placeholder
-`images/certificate-placeholder.svg` is **deliberately not a photograph**. A stock image of an
-unrelated certificate would be actively misleading. The SVG carries a visible instruction on the
-artwork itself so it cannot go live unnoticed. Replace it with a scan or photo of the
-foundation's **CAC certificate** (IT/7008093).
+### The photography is stock on purpose
+`images/photos/` holds 14 licensed stock photographs (Pixabay Content Licence — commercial use
+permitted, no attribution required). **This is a settled decision, not a placeholder.** The
+foundation does not release images of the children it works with, so there is no "real photo"
+coming, and the site says so out loud: a short `.footer-disclosure` line appears in the footer of
+all 8 pages stating that the photographs are stock and that the foundation does not publish
+pictures of the children.
 
-The team cards no longer use a placeholder image at all — they render each person's initials in a
-monogram. A monogram is obviously not a photograph, so it reads as honest; a stock headshot would
-not. Swap each `.monogram` `<div>` for an `<img>` as real portraits arrive (§11).
+That disclosure is doing real work. Without it, a visitor reasonably assumes the children in the
+hero image are the foundation's beneficiaries — which would be false, and false in a way that
+misrepresents the people the site is about.
+
+To swap any single image, drop a replacement into `images/photos/` under the same filename; no
+HTML change is needed. Keep the orientation — the site crops with `object-fit: cover`.
+
+### The certificate is real
+`images/certificate.jpg` is the foundation's actual CAC Certificate of Incorporation, published
+unmodified. It replaced `certificate-placeholder.svg`, which has been deleted.
+
+Two things worth knowing:
+
+- **Do not retouch, crop or enhance it.** A doctored registration document is worse than none.
+  If a better copy arrives, replace the file — don't edit it.
+- **It does not name the trustees.** This surprised us and is worth recording: a Nigerian CAC
+  certificate carries the organisation name, registration number, date, registrar and TIN, but
+  not the trustees. Those live in the CAC's own records. So `NEEDED.md` §C is still open.
+
+At 765 × 1024 the scan is legible on screen, but only just. The QR code in the bottom-left corner
+is too small to decode from this copy — if the foundation has the original PDF, a higher-resolution
+export would be a straight improvement.
 
 ### Replace the social share card
 `images/og-cover.svg` is the image shown when a page is shared on WhatsApp, Facebook or X.
@@ -346,15 +367,16 @@ Once `chrysolitefoundation.ng` is registered and pointed at your host, also upda
 - [x] Forms — deliver by mailto out of the box; set `FORM_ENDPOINT` for silent delivery (§5)
 - [x] Contact details — real email plus both phone numbers (§11)
 - [x] Draft notes hidden from visitors — append `?draft=1` to see them (§5)
+- [x] CAC certificate — the real document is published on the About page (§4)
+- [x] Photography — licensed stock images, kept by design and disclosed in the footer (§4)
 
 **Needs material from the foundation**
 
-- [ ] The foundation's own photographs, to replace the 14 stock images in `images/photos/` (§4)
-- [ ] A photograph of the CAC certificate, to replace `certificate-placeholder.svg`
-- [x] Team names and roles — seven people, all sourced to the *Nigerian Tribune*, 7 Oct 2023 (§11)
-- [ ] Portraits for those seven people — the cards currently show initials monograms, not photographs
+- [ ] Portraits for the seven named team members — the cards currently show initials monograms
 - [ ] Confirmation that the October 2023 line-up is still current
-- [ ] The **CAC-registered trustees** by name — these sit on the certificate and are not necessarily the same people as the delivery team
+- [ ] The **CAC-registered trustees** by name — **not printed on the certificate**; get them from
+      the CAC public search portal or the foundation's Form CAC 1.1
+- [ ] A higher-resolution copy of the certificate, if the original PDF still exists
 - [ ] A real photograph for social sharing, to replace `og-cover.svg`
 - [ ] Confirmation of two figures on the About page — "600 children since 2019" and the
       donation-tier table — so they can be stated as fact or removed
@@ -388,8 +410,9 @@ being built and **must be confirmed or removed before launch** — see §10.
 | Claim | Source |
 |---|---|
 | 18.3M out-of-school children; 10.2M primary, 8.1M secondary; 7.6M girls | UNICEF Nigeria — verified |
-| CAC Incorporated Trustees IT/7008093, incorporated 8 June 2023, CAMA 2020 | CAC certificate — verified |
+| CAC Incorporated Trustees IT/7008093, incorporated 8 June 2023, CAMA 2020 | CAC certificate — verified, and the document itself is published on the About page |
 | TIN 2620089007465 | CAC certificate — verified |
+| "Photographs are licensed stock images; we do not publish pictures of the children" | Pixabay Content Licence + the foundation's own decision — stated in the footer of all 8 pages |
 | "100% of these sales contribute to future trainings" | Foundation's Selar store — verified |
 | Email, both phone numbers, Oluyole address | Foundation's own former website, captured 2025-02-24 — verified |
 | CAC registration recognised by Goodstack (unclaimed) | Goodstack organisation record — verified |
