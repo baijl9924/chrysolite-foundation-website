@@ -198,15 +198,9 @@ Adjust them to match your real costs, and keep the honesty note beneath the tabl
 
 ---
 
-## 5. Connecting the forms ⚠️
+## 5. The forms
 
-**The forms do not send anywhere yet.** They are front-end only — submitting one shows a
-thank-you message and clears the fields, but no email is sent.
-
-This is deliberate: it means the site works offline and does not silently drop enquiries.
-You must connect them before going live.
-
-There are three forms:
+There are four forms:
 
 | Page | Form |
 |---|---|
@@ -215,42 +209,47 @@ There are three forms:
 | `stories.html` | Newsletter signup |
 | `contact.html` | Main contact / support request |
 
-All of them carry the attribute `data-demo-form`. To connect them, pick one option:
+**They work as shipped** — no account, no backend. Submitting one opens the visitor's own
+email app with the message pre-filled and addressed to `chrysoliteinfo@gmail.com`. Nothing is
+silently dropped and no third party sees the data. The trade-offs: the visitor has to press
+send, and someone on a webmail-only setup may have no mail app configured.
 
-### Option A — Formspree (easiest, free tier available)
-1. Create an account at https://formspree.io and a new form
-2. Copy your form endpoint, e.g. `https://formspree.io/f/abcdwxyz`
-3. In each `<form>` tag, replace `data-demo-form` with:
-   ```html
-   action="https://formspree.io/f/abcdwxyz" method="POST"
-   ```
-4. In `js/chrysolite.js`, delete the block that intercepts `form[data-demo-form]`
-   (section 2, "Forms") so the browser submits normally
-5. Keep the `<input name="...">` attributes — Formspree uses them as field labels
+### Making submissions arrive silently
 
-### Option B — Netlify Forms (free, if you host on Netlify)
-Add `netlify` and a name to each form:
+Set `FORM_ENDPOINT` at the top of `js/chrysolite.js`. That is the only change:
 
-```html
-<form name="volunteer" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="volunteer">
-  …
-</form>
+```js
+var FORM_ENDPOINT = 'https://formspree.io/f/abcdwxyz';
 ```
 
-Then remove the interception block in `js/chrysolite.js` as above.
+When it is set, each form is POSTed there with `fetch()` and the visitor stays on the page —
+the mailto fallback is skipped. If the POST fails, the form tells the visitor to email the
+foundation directly rather than pretending it worked.
 
-### Option C — Your own endpoint
-Point `action` at your script and set `method="POST"`. If you keep the AJAX behaviour, edit
-the submit handler in `js/chrysolite.js` to `fetch()` your endpoint instead of just showing
-the message.
+**Formspree** (free tier, no server needed):
+1. Create an account at https://formspree.io and a new form
+2. Copy the endpoint, e.g. `https://formspree.io/f/abcdwxyz`
+3. Paste it into `FORM_ENDPOINT`
+4. Submit each form once and confirm the email arrives — including in the spam folder
 
-### Option D — Google Forms / Tally / a mailto: link
-Simplest of all: replace each form with a button linking to an external form, or a
-`mailto:` link. Less polished, zero setup.
+**Netlify Forms** (free, if you host on Netlify): add `netlify` and a `name` to each `<form>`
+plus a hidden `form-name` input, then point `FORM_ENDPOINT` at a path on your own site (Netlify
+intercepts the POST).
 
-> After connecting, **test every form** with a real submission and confirm the email arrives —
-> including in the spam folder.
+**Your own endpoint**: set `FORM_ENDPOINT` to your URL. It must accept a `POST` carrying
+`multipart/form-data` and answer with a 2xx status.
+
+> Whichever you choose, **submit every form once on the live site** and confirm the message
+> arrives. A form that looks like it worked but sends nothing is worse than no form at all.
+
+### Field names
+Each input's `name` attribute is what an endpoint receives. The mailto fallback uses the
+visible `<label>` text instead, so the email a visitor sends reads naturally.
+
+### Draft notes
+Notes addressed to whoever maintains the site (the "replace this photo" blocks) are hidden by
+default so the site can go live exactly as it stands. Append `?draft=1` to any page URL to
+reveal them again while you are still filling things in.
 
 ---
 
@@ -340,34 +339,63 @@ Once `chrysolitefoundation.ng` is registered and pointed at your host, also upda
 
 ## 10. Before you go live — checklist
 
-- [ ] Replace the 14 stock photographs in `images/photos/` with real programme photos (§4)
-- [ ] Replace `certificate-placeholder.svg` and `trustee-placeholder.svg` (§4)
-- [ ] Replace `og-cover.svg` with a real photo for social sharing
-- [ ] Confirm the real domain and update canonical URLs, `robots.txt`, `sitemap.xml` (§9)
-- [ ] Reconcile the two addresses — Oluyole (site) vs Oduduwa Road (CAC record) (§4)
+**Already working — no action needed**
+
+- [x] Donation link — verified live (Flutterwave `ayjdhsqasnkl`, returns the foundation's page)
+- [x] Shop link — Selar store
+- [x] Forms — deliver by mailto out of the box; set `FORM_ENDPOINT` for silent delivery (§5)
+- [x] Contact details — real email plus both phone numbers (§11)
+- [x] Draft notes hidden from visitors — append `?draft=1` to see them (§5)
+
+**Needs material from the foundation**
+
+- [ ] The foundation's own photographs, to replace the 14 stock images in `images/photos/` (§4)
+- [ ] A photograph of the CAC certificate, to replace `certificate-placeholder.svg`
+- [ ] Trustee names, roles and photographs, to replace the four `trustee-placeholder.svg` cards
+- [ ] A real photograph for social sharing, to replace `og-cover.svg`
+- [ ] Confirmation of two figures on the About page — "600 children since 2019" and the
+      donation-tier table — so they can be stated as fact or removed
+- [ ] Confirmation of the founding year: the site says 2019 (from LinkedIn), the foundation's
+      own former website said "Since 2008"
+- [ ] Confirmation of the programme list — the former site named Free Education, Support,
+      Empower (discounted ICT training via CISCO), Rural Outreach, Medical Outreaches and
+      Skill Empowerment
+
+**Needs a decision or an account**
+
+- [ ] Register `chrysolitefoundation.ng` (currently available) — canonical, `og:url`, `og:image`
+      and `sitemap.xml` all become valid at once (§11)
+- [ ] Decide how form submissions should be delivered (§5)
+- [ ] Only once domain email actually works, move off the Gmail address — not before
+
+**Final checks**
+
 - [ ] Verify the TemplatesJungle footer credit is still present on all 8 pages (§1)
 - [ ] Test on a phone — most visitors will arrive on mobile
-- [ ] Check the address, phone and email are correct in the footer of all pages
+- [ ] Submit every form once on the live site and confirm the message arrives
 
 ---
 
 ## 11. Content sources
 
 Facts on this site come from the foundation's own public records and activity, not from
-assumptions. Where a number is an estimate rather than a verified figure, the page says so.
+assumptions. The rows marked **unverified** were written as placeholders while the site was
+being built and **must be confirmed or removed before launch** — see §10.
 
 | Claim | Source |
 |---|---|
-| 18.3M out-of-school children; 10.2M primary, 8.1M secondary; 7.6M girls | UNICEF Nigeria |
-| CAC Incorporated Trustees IT/7008093, incorporated 8 June 2023, CAMA 2020 | CAC certificate |
-| TIN 2620089007465 | CAC certificate |
-| 600+ children and young adults reached since 2019 | Foundation's own reporting |
-| Ray of Hope — 4 editions, closing with exhibition / trade fair / awards | Foundation's own activity records |
-| 6-week skill programme; crochet, adire, ankara; Isale Osun, Beere Ibadan | Foundation's own activity records |
-| Back to School — 3rd edition; ₦1,000 as indicative per-pupil cost | Foundation's own activity records |
-| "100% of these sales contribute to future trainings" | Foundation's Selar store |
-| Address, phone, social profiles | Foundation's public profiles |
-| CAC registration recognised by Goodstack (unclaimed) | Goodstack organisation record |
+| 18.3M out-of-school children; 10.2M primary, 8.1M secondary; 7.6M girls | UNICEF Nigeria — verified |
+| CAC Incorporated Trustees IT/7008093, incorporated 8 June 2023, CAMA 2020 | CAC certificate — verified |
+| TIN 2620089007465 | CAC certificate — verified |
+| "100% of these sales contribute to future trainings" | Foundation's Selar store — verified |
+| Email, both phone numbers, Oluyole address | Foundation's own former website, captured 2025-02-24 — verified |
+| CAC registration recognised by Goodstack (unclaimed) | Goodstack organisation record — verified |
+| 600+ children and young adults reached since 2019 | **unverified — awaiting confirmation** |
+| Ray of Hope — 4 editions, closing with exhibition / trade fair / awards | **unverified — awaiting confirmation** |
+| 6-week skill programme; crochet, adire, ankara; Isale Osun, Beere Ibadan | **unverified — awaiting confirmation** |
+| Back to School — 3rd edition; ₦1,000 as indicative per-pupil cost | **unverified — awaiting confirmation** |
+| Donation tiers ₦1,000 / ₦5,000 / ₦25,000 / ₦100,000 | **unverified — awaiting confirmation** |
+| Founded 2019 | LinkedIn — **conflicts with the foundation's own "Since 2008"** |
 
 If any figure changes, update it here and on the page that cites it.
 

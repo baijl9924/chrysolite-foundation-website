@@ -44,28 +44,97 @@
   }
 
   /* ---------- 2. Forms ----------
-     These forms are front-end only — they do NOT send anywhere yet.
-     See README.md → "Connecting the forms" to wire them up
-     (Formspree / Netlify Forms / your own endpoint / a Google Form). */
+     Two modes, chosen automatically:
+
+       (a) FORM_ENDPOINT is set -> the form is POSTed there and the visitor
+           stays on the page. Use this once a form service is connected:
+           Formspree, Netlify Forms, Basin, or your own handler.
+           See README.md -> "Connecting the forms".
+
+       (b) FORM_ENDPOINT is empty -> the form is handed to the visitor's own
+           email app as a pre-filled message addressed to FALLBACK_EMAIL.
+           Nothing is lost and nothing is sent anywhere behind the visitor's
+           back, but they do have to press send. This is the state the site
+           ships in, so that no enquiry is ever silently dropped. */
+  var FORM_ENDPOINT = '';                                 // e.g. 'https://formspree.io/f/xxxxxxx'
+  var FALLBACK_EMAIL = 'chrysoliteinfo@gmail.com';
+
+  function fieldLabel(form, name) {
+    var el = form.elements[name];
+    if (el && el.labels && el.labels.length) {
+      return el.labels[0].textContent.replace(/\s+/g, ' ').trim();
+    }
+    return name;
+  }
+
   Array.prototype.forEach.call(document.querySelectorAll('form[data-demo-form]'), function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var status = form.querySelector('.form-status');
-      if (status) {
-        status.textContent = form.dataset.successMessage ||
-          'Thank you — your message has been received.';
+
+      function show(message, isError) {
+        if (!status) return;
+        status.textContent = message;
         status.style.display = 'block';
+        if (isError) status.classList.add('is-error');
+        else status.classList.remove('is-error');
       }
-      form.reset();
+
+      if (FORM_ENDPOINT) {
+        show('Sending\u2026');
+        fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(form)
+        }).then(function (res) {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          show(form.dataset.successMessage || 'Thank you \u2014 your message has been received.');
+          form.reset();
+        }).catch(function () {
+          show('Sorry \u2014 that did not send. Please email ' + FALLBACK_EMAIL +
+               ' directly and we will pick it up.', true);
+        });
+        return;
+      }
+
+      /* No endpoint configured: hand the enquiry to the visitor's mail app.
+         This clicks a temporary anchor rather than assigning window.location:
+         if the visitor has no mail app registered, assigning location can leave
+         them staring at a blank page, whereas a protocol-handler click on an
+         anchor simply does nothing and the message below still explains the
+         fallback. */
+      var lines = [];
+      new FormData(form).forEach(function (value, name) {
+        if (String(value).trim()) lines.push(fieldLabel(form, name) + ': ' + value);
+      });
+      var mailto = 'mailto:' + FALLBACK_EMAIL +
+        '?subject=' + encodeURIComponent('[Website] ' + (form.dataset.formName || 'Enquiry')) +
+        '&body=' + encodeURIComponent(lines.join('\n'));
+      var handoff = document.createElement('a');
+      handoff.href = mailto;
+      handoff.style.display = 'none';
+      document.body.appendChild(handoff);
+      handoff.click();
+      document.body.removeChild(handoff);
+      show('Your email app is opening with this message ready to send \u2014 press send to deliver it. ' +
+           'If nothing opened, email ' + FALLBACK_EMAIL + ' directly.');
     });
   });
 
-  /* ---------- 3. Current year in footer ---------- */
+  /* ---------- 3. Draft notes ----------
+     The notes addressed to whoever maintains the site are hidden by default
+     so the site can go live exactly as it stands. Append ?draft=1 to any
+     page URL to reveal them again while you are still filling things in. */
+  if (/[?&]draft=1(&|$)/.test(window.location.search)) {
+    document.body.classList.add('is-draft');
+  }
+
+  /* ---------- 4. Current year in footer ---------- */
   Array.prototype.forEach.call(document.querySelectorAll('[data-year]'), function (el) {
     el.textContent = new Date().getFullYear();
   });
 
-  /* ---------- 4. Anchor offset for the fixed header ---------- */
+  /* ---------- 5. Anchor offset for the fixed header ---------- */
   Array.prototype.forEach.call(document.querySelectorAll('a[href^="#"]'), function (a) {
     var href = a.getAttribute('href');
     if (!href || href === '#') return;

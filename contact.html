@@ -202,7 +202,7 @@
 						Choose the reason that fits best so your message reaches the right person faster.
 					</p>
 
-					<form data-demo-form data-success-message="Thank you — your message has been received. We will reply by email.">
+					<form data-demo-form data-form-name="Contact form" data-success-message="Thank you — your message has been received. We will reply by email.">
 						<div class="row g-3">
 							<div class="col-md-6">
 								<label class="form-label" for="c-name">Your name</label>
@@ -253,9 +253,12 @@
 					</form>
 
 					<p class="placeholder-note mt-4 mb-0">
-						<strong>Note for the site owner.</strong> This form is front-end only — it does not
-						send anywhere yet. Follow the "Connecting the forms" section in <code>README.md</code>
-						to wire it up in a few minutes.
+						<strong>Note for the site owner.</strong> This form works with no account and no
+						backend: submitting it opens the visitor's own email app with the message
+						pre-filled and addressed to <code>chrysoliteinfo@gmail.com</code>. To have
+						submissions arrive silently instead, set <code>FORM_ENDPOINT</code> at the top of
+						<code>js/chrysolite.js</code> — see <code>README.md</code> →
+						"Connecting the forms".
 					</p>
 				</div>
 			</div>
