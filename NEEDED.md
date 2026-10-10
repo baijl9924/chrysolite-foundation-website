@@ -254,9 +254,15 @@ of this section got it wrong by naming only Nigerian registrars.
 - **Paying from inside Nigeria** → **TrueHost.com.ng** or **MokoHost**, both NiRA-accredited,
   priced in naira, payable by Nigerian card or bank transfer. `.ng` at MokoHost is ₦13,250.
 - **Paying from outside Nigeria** → the Nigerian registrars above are effectively unusable; they
-  expect a naira transfer or a Nigerian card. Use **Dynadot** instead: `.ng` at **$10.34** and
-  `.org.ng` at **$10.25**, register / renew / transfer all at the same price, and it runs a
-  Chinese-language storefront. International cards and PayPal are accepted.
+  expect a naira transfer or a Nigerian card, and the sites are often slow or unreachable from
+  abroad. Use **Dynadot** instead: `.ng` at **$10.34** and `.org.ng` at **$10.25**, register /
+  renew / transfer all at the same price, and it runs a Chinese-language storefront. International
+  cards and PayPal are accepted.
+- **Do not expect a mainland-Chinese registrar to work.** Aliyun and Tencent Cloud may only sell
+  TLDs licensed by the regulator; a `.ng` domain is very unlikely to be on that list, so the
+  option will simply not appear in their search. Registrars that do carry `.ng` in Chinese
+  (AsiaRegister at ¥680/yr, SeaArea) charge roughly nine times the registry rate — usable, but
+  only worth it if a domestic payment method is the hard requirement.
 - **Avoid** resellers that mark `.ng` up by an order of magnitude — 101domain lists `.org.ng` at
   $124.99 and INWX at $118.80. Those are the same domain at twelve times the price.
 
