@@ -179,17 +179,24 @@ after a swap.
 ### The photography is stock on purpose
 `images/photos/` holds 14 licensed stock photographs (Pixabay Content Licence — commercial use
 permitted, no attribution required). **This is a settled decision, not a placeholder.** The
-foundation does not release images of the children it works with, so there is no "real photo"
-coming, and the site says so out loud: a short `.footer-disclosure` line appears in the footer of
-all 8 pages stating that the photographs are stock and that the foundation does not publish
-pictures of the children.
+foundation does not publish images of the children it works with, so there is no "real photo"
+coming.
 
-That disclosure is doing real work. Without it, a visitor reasonably assumes the children in the
-hero image are the foundation's beneficiaries — which would be false, and false in a way that
-misrepresents the people the site is about.
+The licence position is recorded in `NOTICE.md`, which is where it belongs — that document exists
+precisely so a future maintainer knows these are not the foundation's own pictures. There is no
+visitor-facing disclosure; the decision was made not to add one.
 
 To swap any single image, drop a replacement into `images/photos/` under the same filename; no
 HTML change is needed. Keep the orientation — the site crops with `object-fit: cover`.
+
+### The team cards use monograms on purpose
+The seven people on `about.html#team` are shown as initials — "EM", "CO", "VA" — not photographs.
+No portraits of them are published either. This is the finished design, not a placeholder, so do
+not add a "send us a photo" note to the page.
+
+Each card carries the person's name, role, and the section cites the *Nigerian Tribune* article
+the names came from. If the foundation ever wants photographs here, replace the `.monogram` `<div>`
+with an `<img>` and delete the `.monogram` rule.
 
 ### The certificate is real, and the registration is live
 `images/certificate.jpg` is the foundation's actual CAC Certificate of Incorporation, published
@@ -378,12 +385,12 @@ Once `chrysolitefoundation.ng` is registered and pointed at your host, also upda
 - [x] Contact details — real email plus both phone numbers (§11)
 - [x] Draft notes hidden from visitors — append `?draft=1` to see them (§5)
 - [x] CAC certificate — the real document is published on the About page (§4)
-- [x] Photography — licensed stock images, kept by design and disclosed in the footer (§4)
+- [x] Photography — licensed stock images, kept by design; no photographs of the children (§4)
+- [x] Team portraits — none, by the same decision; the seven cards use initials monograms (§4)
 
 **Needs material from the foundation**
 
-- [ ] Portraits for the seven named team members — the cards currently show initials monograms
-- [ ] Confirmation that the October 2023 line-up is still current
+- [ ] Confirmation that the October 2023 team line-up is still current
 - [ ] The **CAC-registered trustees** by name — **not printed on the certificate, and not shown
       by the CAC public search either**; only Form CAC 1.1 or a paid Certified True Copy has them.
       **Optional** — the governance section stands on its own without them
@@ -424,7 +431,7 @@ being built and **must be confirmed or removed before launch** — see §10.
 | CAC Incorporated Trustees IT/7008093, incorporated 8 June 2023, CAMA 2020 | CAC certificate — verified, and the document itself is published on the About page |
 | TIN 2620089007465 | CAC certificate — verified |
 | Registration status **Active** | CAC public search portal, query `7008093`, checked 10 Oct 2026 — verified |
-| "Photographs are licensed stock images; we do not publish pictures of the children" | Pixabay Content Licence + the foundation's own decision — stated in the footer of all 8 pages |
+| Programme photography is licensed stock (Pixabay, commercial use, no attribution) | `NOTICE.md` — the internal record of the licence. Not stated to visitors |
 | "100% of these sales contribute to future trainings" | Foundation's Selar store — verified |
 | Email, both phone numbers, Oluyole address | Foundation's own former website, captured 2025-02-24 — verified |
 | CAC registration recognised by Goodstack (unclaimed) | Goodstack organisation record — verified |
@@ -463,9 +470,8 @@ Two cautions recorded here on purpose:
 
 1. **The roles are dated October 2023.** Three years is long enough for people to move on. The
    foundation must confirm the current line-up before the site is treated as authoritative.
-2. **The cards use initials, not portraits.** No photographs of these people exist in any source
-   we can use, and a stock portrait of an unrelated person would be a lie. A monogram is visibly
-   not a photograph, so it reads as honest.
+2. **The cards use initials, not portraits.** The foundation publishes no photographs of these
+   people — nor of the children. This is the finished design; see §4.
 
 The same article is the source for the programme facts now on `programs.html`: the Isale Osun
 venue in Ibadan North East, the 5–27 age range, the six-week format, the four crafts taught, the

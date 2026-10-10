@@ -8,9 +8,11 @@ Items are ordered by how much they improve the site per unit of effort.
 
 **Already settled — please don't reopen these:**
 
-- **Photographs.** The foundation does not release images of the children it works with, so the
-  site uses licensed stock photographs, permanently. The footer of every page says so in plain
-  words. §A below is kept only as a shopping list in case that decision ever changes.
+- **Photographs of the programmes.** The foundation does not publish photographs of the children it
+  works with, so the site uses licensed stock photographs. Permanently. §A is kept only as a
+  shopping list in case that decision ever changes.
+- **Photographs of the team.** None either. The seven cards use initials monograms, and that is the
+  finished design, not a placeholder. §A2.
 - **The CAC certificate.** Received and published unmodified on the About page. §B is done.
 
 ---
@@ -19,9 +21,7 @@ Items are ordered by how much they improve the site per unit of effort.
 
 The foundation has decided **not** to publish photographs of the children it works with. That is
 the right call, and it is now the site's permanent design: `images/photos/` holds 14 licensed
-stock photographs (Pixabay — commercial use permitted, no attribution required), and the footer
-of all 8 pages states plainly that they are stock images and that the foundation does not publish
-pictures of the children.
+stock photographs (Pixabay — commercial use permitted, no attribution required).
 
 Nothing is needed here. What follows is kept only so that, if the foundation ever reverses the
 decision, the specifications are already written down.
@@ -52,28 +52,30 @@ file it replaces — the site crops to fit, so a portrait photo cannot fill a la
 > it. If it cannot be published, it does not go on the site — the stock photographs remain the
 > fallback, and they are a perfectly good one.
 
-### A2. Portraits of the seven people named on the About page — still open
+### A2. Portraits of the seven people — settled, no photographs
 
-This is a separate question from §A, and it is **not** settled: the seven adults on the team are
-not children, and a real face is what makes a small non-profit feel like people rather than a
-letterhead. It is now the single biggest remaining improvement to the site.
+The foundation has decided against publishing photographs of the team, as well as of the children.
+The cards therefore use **initials monograms** — "EM", "CO", "VA" — and that is the finished
+design rather than a placeholder. **Nothing is needed here.**
 
-| Person | Role | What to send |
-|---|---|---|
-| Esther Chineye Mbabie | Founder & Executive Director | Head and shoulders, plain background, portrait orientation |
-| Chibueze Okechukwu | Head of Programmes | same |
-| Victoria Ayodele | Crochet tutor | same |
-| Ololade Olatunde | Crochet tutor | same |
-| Precious Adediji | Tie & dye (adire) tutor | same |
-| Eniola Ajayi | Upcycling tutor | same |
-| Doyinsola Owolabi | Ankara crafts tutor | same |
+The names, the roles and the source they came from are all on the page, so the section still does
+the job it was built for: a visitor can see who runs the organisation, and check where that
+information came from.
 
-A phone photo against a plain wall in daylight is entirely good enough. What matters is that
-the person is recognisable and that they are happy for the picture to be public.
+| Person | Role |
+|---|---|
+| Esther Chineye Mbabie | Founder & Executive Director |
+| Chibueze Okechukwu | Head of Programmes |
+| Victoria Ayodele | Crochet |
+| Ololade Olatunde | Crochet |
+| Precious Adediji | Tie & dye (adire) |
+| Eniola Ajayi | Upcycling |
+| Doyinsola Owolabi | Ankara crafts |
 
-**And please confirm the list is still right.** These roles were published in the *Nigerian
-Tribune* in October 2023. If anyone has since stepped back, changed role, or should be
-credited differently — or if anyone is missing — tell us and the cards change.
+**One thing still worth a glance, and it is about accuracy rather than pictures:** these roles were
+printed in the *Nigerian Tribune* in October 2023. If anyone has since stepped back, changed role,
+or should be credited differently — or if anyone is missing — tell us and the names change. No
+photographs involved.
 
 ---
 
@@ -207,7 +209,8 @@ So nobody re-checks it:
 - ✅ CAC registration, TIN, incorporation date — from the certificate
 - ✅ **Registration status Active** — confirmed on the CAC public search, 10 Oct 2026
 - ✅ **The CAC certificate itself** — published unmodified on the About page
-- ✅ Photography — licensed stock images, permanent by decision, disclosed in every footer
+- ✅ Photography — licensed stock images, permanent by decision; no photographs of the children
+- ✅ Team portraits — none, by the same decision; the seven cards use initials monograms
 - ✅ Team names and roles — seven people, all traceable to the *Nigerian Tribune*, 7 Oct 2023
 - ✅ Programme facts — venue, age range, six-week format, the four crafts, The AID NG partnership
 - ✅ Goodstack record — located and documented; **unclaimed**, which is free to fix

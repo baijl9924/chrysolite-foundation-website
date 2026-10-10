@@ -59,13 +59,13 @@ template's original icon font and is not referenced by any page — it can be de
 
 **The 14 photographs are stock, and they stay that way.** They are real, licensed photographs
 chosen so the layout reads correctly and so no page ships with an empty grey box — they are
-**not** pictures of Chrysolite Foundation's programmes. The foundation does not release images of
+**not** pictures of Chrysolite Foundation's programmes. The foundation does not publish images of
 the children it works with, so this is a settled decision rather than a placeholder.
 
-Because a visitor would otherwise reasonably assume the children in the hero image are the
-foundation's beneficiaries, the footer of all 8 pages carries a short `.footer-disclosure` line
-stating that the photographs are licensed stock images and that the foundation does not publish
-pictures of the children. Keep that line.
+There is deliberately **no visitor-facing disclosure** of this. The decision was made not to add
+one. That makes this file the only record, which is exactly why the paragraph above must not be
+deleted: a future maintainer has to be able to tell that these are not the foundation's own
+pictures.
 
 To swap a photograph, drop the replacement into `images/photos/` under the same filename —
 no HTML change is needed. All photos are referenced by filename from `index.html`,
@@ -77,8 +77,7 @@ published as supplied — **do not retouch, crop or enhance it.** A doctored reg
 is worse than none. It replaced `certificate-placeholder.svg`, which has been deleted.
 
 The seven team cards on `about.html` use **initials monograms**, not photographs, for the same
-reason — no portrait of these people exists in any usable source. A monogram cannot be mistaken
-for a portrait. See `NEEDED.md` §A2.
+reason. This is the finished design, not a placeholder. See `NEEDED.md` §A2.
 
 Note that the Pixabay licence permits commercial use without attribution, so no credit line
 is legally required for these 14 files. If the foundation prefers to credit them anyway,
