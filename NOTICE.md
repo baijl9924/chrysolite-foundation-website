@@ -55,7 +55,7 @@ template's original icon font and is not referenced by any page — it can be de
 |---|---|---|---|
 | Programme photography | `images/photos/*.jpg` (14) | Pixabay | Pixabay Content Licence — free for commercial use, **no attribution required**, no permission needed |
 | Brand assets | `images/logo-mark.svg`, `favicon.svg`, `og-cover.svg`, `hero-bg.svg`, `cta-bg.svg` | Created for this site | © the foundation |
-| Pending placeholders | `images/certificate-placeholder.svg`, `images/trustee-placeholder.svg` | Created for this site | Replace with the foundation's own material |
+| Pending placeholder | `images/certificate-placeholder.svg` | Created for this site | Replace with the foundation's own material |
 
 **The 14 photographs are stand-ins.** They are real, licensed photographs chosen so the
 layout reads correctly and so no page ships with an empty grey box — they are **not**
@@ -68,9 +68,13 @@ no HTML change is needed. All photos are referenced by filename from `index.html
 `about.html`, `programs.html`, `shop.html`, `stories.html`, `single-post.html`,
 `get-involved.html` and `contact.html`. Search for `images/photos/` to find every use.
 
-The two SVG placeholders are deliberately **not** photographs: a stock photo of an unrelated
-certificate or of unrelated people presented as trustees would be misleading. They carry
-visible instructions on the artwork itself so they cannot be shipped unnoticed.
+The remaining SVG placeholder is deliberately **not** a photograph: a stock photo of an unrelated
+certificate would be misleading. It carries a visible instruction on the artwork itself so it
+cannot be shipped unnoticed.
+
+The seven team cards on `about.html` use **initials monograms**, not photographs, for the same
+reason — no portrait of these people exists in any usable source. A monogram cannot be mistaken
+for a portrait. See `NEEDED.md` §A2.
 
 Note that the Pixabay licence permits commercial use without attribution, so no credit line
 is legally required for these 14 files. If the foundation prefers to credit them anyway,

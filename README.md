@@ -101,8 +101,7 @@ There is also a gold accent `#E0A72C` used sparingly in the logo and social card
 │   ├── hero-bg.svg             Dark forest hero background
 │   ├── cta-bg.svg              CTA band background
 │   ├── og-cover.svg            1200×630 social share card
-│   ├── certificate-placeholder.svg   CAC certificate stand-in — replace with a photo
-│   └── trustee-placeholder.svg       Trustee portrait stand-in — replace with a photo
+│   └── certificate-placeholder.svg   CAC certificate stand-in — replace with a photo
 ├── js/
 │   ├── chrysolite.js       Site behaviour (donations, forms, year, anchor offset)
 │   ├── script.js           Template behaviour (lightbox, parallax, scroll nav)
@@ -177,14 +176,15 @@ grep -rn "images/photos/" *.html | sort
 Then check the result — `_shots`-style tooling is not part of the repo, so eyeball each page
 after a swap.
 
-### The two remaining placeholders
-`images/certificate-placeholder.svg` and `images/trustee-placeholder.svg` are **deliberately
-not photographs**. A stock image of an unrelated certificate, or of unrelated people
-presented as trustees, would be actively misleading. Each SVG carries a visible instruction
-on the artwork itself so it cannot go live unnoticed. Replace them with:
+### The one remaining placeholder
+`images/certificate-placeholder.svg` is **deliberately not a photograph**. A stock image of an
+unrelated certificate would be actively misleading. The SVG carries a visible instruction on the
+artwork itself so it cannot go live unnoticed. Replace it with a scan or photo of the
+foundation's **CAC certificate** (IT/7008093).
 
-- a scan or photo of the foundation's **CAC certificate** (IT/7008093)
-- real headshots of the trustees, cropped to 4:5
+The team cards no longer use a placeholder image at all — they render each person's initials in a
+monogram. A monogram is obviously not a photograph, so it reads as honest; a stock headshot would
+not. Swap each `.monogram` `<div>` for an `<img>` as real portraits arrive (§11).
 
 ### Replace the social share card
 `images/og-cover.svg` is the image shown when a page is shared on WhatsApp, Facebook or X.
@@ -351,7 +351,10 @@ Once `chrysolitefoundation.ng` is registered and pointed at your host, also upda
 
 - [ ] The foundation's own photographs, to replace the 14 stock images in `images/photos/` (§4)
 - [ ] A photograph of the CAC certificate, to replace `certificate-placeholder.svg`
-- [ ] Trustee names, roles and photographs, to replace the four `trustee-placeholder.svg` cards
+- [x] Team names and roles — seven people, all sourced to the *Nigerian Tribune*, 7 Oct 2023 (§11)
+- [ ] Portraits for those seven people — the cards currently show initials monograms, not photographs
+- [ ] Confirmation that the October 2023 line-up is still current
+- [ ] The **CAC-registered trustees** by name — these sit on the certificate and are not necessarily the same people as the delivery team
 - [ ] A real photograph for social sharing, to replace `og-cover.svg`
 - [ ] Confirmation of two figures on the About page — "600 children since 2019" and the
       donation-tier table — so they can be stated as fact or removed
@@ -392,12 +395,47 @@ being built and **must be confirmed or removed before launch** — see §10.
 | CAC registration recognised by Goodstack (unclaimed) | Goodstack organisation record — verified |
 | 600+ children and young adults reached since 2019 | **unverified — awaiting confirmation** |
 | Ray of Hope — 4 editions, closing with exhibition / trade fair / awards | **unverified — awaiting confirmation** |
-| 6-week skill programme; crochet, adire, ankara; Isale Osun, Beere Ibadan | **unverified — awaiting confirmation** |
+| 6-week skill programme; crochet, adire, ankara craft **and upcycling**; Isale Osun, Ibadan North East | *Nigerian Tribune*, 7 Oct 2023 — verified |
+| Cohort open to ages **5–27**; each ends in an exhibition and a trade fair | *Nigerian Tribune*, 7 Oct 2023 — verified |
+| Seminars on waste disposal run with the sustainability NGO **The AID NG** | *Nigerian Tribune*, 7 Oct 2023 — verified |
+| Fair proceeds go to an **empowerment centre** in Isale Osun and to the next cohort | *Nigerian Tribune*, 7 Oct 2023 — verified |
+| Team of seven: Esther Chineye Mbabie, Chibueze Okechukwu, Victoria Ayodele, Ololade Olatunde, Precious Adediji, Eniola Ajayi, Doyinsola Owolabi | *Nigerian Tribune*, 7 Oct 2023 · name and title cross-checked on Ekonke — verified |
 | Back to School — 3rd edition; ₦1,000 as indicative per-pupil cost | **unverified — awaiting confirmation** |
 | Donation tiers ₦1,000 / ₦5,000 / ₦25,000 / ₦100,000 | **unverified — awaiting confirmation** |
-| Founded 2019 | LinkedIn — **conflicts with the foundation's own "Since 2008"** |
+| Founded 2019 | LinkedIn — corroborated by the foundation's own "Chrysolite Foundation is three!" post, 1 Dec 2022, and by the *Tribune*'s "third year since 2020" for the Isale Osun outreach. Still conflicts with the foundation's own former site saying "Since 2008" |
 
 If any figure changes, update it here and on the page that cites it.
+
+### Where the people come from
+
+The seven names on the About page are the first content on this site with a genuinely
+**independent** source — a national newspaper, not the foundation's own material.
+
+| Person | Role | Source |
+|---|---|---|
+| Esther Chineye Mbabie | Founder & Executive Director | *Nigerian Tribune*, 7 Oct 2023 · Ekonke author profile |
+| Chibueze Okechukwu | Head of Programmes | *Nigerian Tribune*, 7 Oct 2023 |
+| Victoria Ayodele | Crochet tutor | *Nigerian Tribune*, 7 Oct 2023 |
+| Ololade Olatunde | Crochet tutor | *Nigerian Tribune*, 7 Oct 2023 |
+| Precious Adediji | Tie & dye (adire) tutor | *Nigerian Tribune*, 7 Oct 2023 |
+| Eniola Ajayi | Upcycling tutor | *Nigerian Tribune*, 7 Oct 2023 |
+| Doyinsola Owolabi | Ankara crafts tutor | *Nigerian Tribune*, 7 Oct 2023 |
+
+Article: [“How NGO empowered Ibadan children with business skills”](https://tribuneonlineng.com/how-ngo-empowered-ibadan-children-with-business-skills/),
+Kingsley Alumona, *Nigerian Tribune*, 7 October 2023.
+
+Two cautions recorded here on purpose:
+
+1. **The roles are dated October 2023.** Three years is long enough for people to move on. The
+   foundation must confirm the current line-up before the site is treated as authoritative.
+2. **The cards use initials, not portraits.** No photographs of these people exist in any source
+   we can use, and a stock portrait of an unrelated person would be a lie. A monogram is visibly
+   not a photograph, so it reads as honest.
+
+The same article is the source for the programme facts now on `programs.html`: the Isale Osun
+venue in Ibadan North East, the 5–27 age range, the six-week format, the four crafts taught, the
+closing exhibition and trade fair, the The AID NG partnership, and the plan to build an
+empowerment centre from the fair proceeds.
 
 ### The Goodstack record
 

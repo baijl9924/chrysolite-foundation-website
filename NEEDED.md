@@ -39,6 +39,29 @@ site crops to fit, so a portrait photo cannot fill a landscape slot.
 > has the parent's or guardian's permission to publish them. If a photo cannot be published,
 > don't send it — the stock photos are a safe fallback until real ones exist.
 
+### A2. Portraits of the seven people named on the About page
+
+The team cards currently show **initials monograms** — "EM", "CO", "VA" and so on. They are
+clean and they are honest, but a real face is what makes a small non-profit feel like people
+rather than a letterhead.
+
+| Person | Role | What to send |
+|---|---|---|
+| Esther Chineye Mbabie | Founder & Executive Director | Head and shoulders, plain background, portrait orientation |
+| Chibueze Okechukwu | Head of Programmes | same |
+| Victoria Ayodele | Crochet tutor | same |
+| Ololade Olatunde | Crochet tutor | same |
+| Precious Adediji | Tie & dye (adire) tutor | same |
+| Eniola Ajayi | Upcycling tutor | same |
+| Doyinsola Owolabi | Ankara crafts tutor | same |
+
+A phone photo against a plain wall in daylight is entirely good enough. What matters is that
+the person is recognisable and that they are happy for the picture to be public.
+
+**And please confirm the list is still right.** These roles were published in the *Nigerian
+Tribune* in October 2023. If anyone has since stepped back, changed role, or should be
+credited differently — or if anyone is missing — tell us and the cards change.
+
 ---
 
 ## B. Documents
@@ -52,18 +75,22 @@ annual return or tax-exemption letter.
 
 ---
 
-## C. The trustees — four cards on the About page
+## C. The registered trustees — still unknown
 
-Four cards currently read "Trustee name" over a silhouette. Named, accountable people are what
-make a small non-profit credible. For each person we need:
+The team section is now filled in from the *Nigerian Tribune* (§A2 above). What is still missing
+is a different group of people: the **trustees named on the CAC certificate**.
 
-1. **Full name** (as they want it published)
-2. **Role** — e.g. Founder & Trustee, Programmes Lead, Volunteer Coordinator, Finance & Compliance
-3. **A photograph** — head and shoulders, portrait orientation, against a plain background
-4. Optional: one sentence of background, and a LinkedIn or email link
+For an Incorporated Trustees in Nigeria, the Certificate of Incorporation names the trustees,
+and they are the people legally answerable for the organisation. The About page currently shows
+the registration table without naming them, which leaves an obvious question hanging.
 
-If there are only two or three people, say so — the layout adapts. **Do not invent names to fill
-the four slots.** Fewer real names beat four invented ones.
+We will not guess. Two ways to supply them:
+
+- send the **CAC certificate photograph** (§B) — the names are printed on it, or
+- send the names and roles in the same format as the team list
+
+They may turn out to be the same people as the delivery team, or they may not. Either answer is
+fine — we just want the published list to be the real one.
 
 ---
 
@@ -75,9 +102,9 @@ while the site was being built. Each one either gets confirmed, corrected, or de
 | # | The site currently says | Please confirm |
 |---|---|---|
 | 1 | "600 children and young adults reached since 2019" | Is this figure right? If not, what is it — and as of when? |
-| 2 | Founded 2019 | The foundation's own former website said **"Since 2008"**. Which is correct? Were 2008–2023 informal outreach before formal registration in 2023? |
+| 2 | Founded 2019 | The foundation's own former website said **"Since 2008"**. Two independent sources now point to 2019 — the foundation's own LinkedIn post *"Chrysolite Foundation is three!"* (1 Dec 2022) and the *Tribune*'s "third year since 2020" for the Isale Osun outreach. So: was 2008 a mistake on the old site, or was there earlier work under a different structure? |
 | 3 | Ray of Hope has run **4 editions**, closing with an exhibition / trade fair / awards | Correct? Which edition was the most recent, and when? |
-| 4 | The skill programme runs **6 weeks**; teaches crochet, adire and ankara; held at **Isale Osun** and **Beere, Ibadan** | Correct? How many trainees per cohort? |
+| 4 | The skill programme runs **6 weeks**; teaches crochet, adire, ankara **and upcycling**; held at **Isale Osun**, Ibadan North East | **Confirmed** by the *Nigerian Tribune*, 7 Oct 2023, including the 5–27 age range and the closing trade fair. Still to answer: **how many trainees per cohort?** And is "Beere" the right way to describe the location? |
 | 5 | Back to School has run **3 editions**; **₦1,000** is the indicative cost of putting one pupil in school | Correct? Is ₦1,000 still accurate? |
 | 6 | Donation tiers: **₦1,000 / ₦5,000 / ₦25,000 / ₦100,000** | Do these amounts correspond to anything real? If not we should remove the "what your gift buys" table rather than invent it. |
 | 7 | Programmes: **Free Education, Support (clothing and borehole water), Empower (discounted ICT training via CISCO), Rural Outreach, Medical Outreaches, Skill Empowerment** | This list came from the foundation's own former website. Still accurate? Anything to add or drop? |
@@ -142,5 +169,7 @@ So nobody re-checks it:
 - ✅ Contact details — real email and both phone numbers, sourced from the foundation's own site
 - ✅ All four forms — functional today via the visitor's email app
 - ✅ CAC registration, TIN, incorporation date — from the certificate
+- ✅ Team names and roles — seven people, all traceable to the *Nigerian Tribune*, 7 Oct 2023
+- ✅ Programme facts — venue, age range, six-week format, the four crafts, The AID NG partnership
 - ✅ Goodstack record — located and documented; **unclaimed**, which is free to fix
 - ✅ Mobile layout, page speed, search-engine tags, sitemap
