@@ -161,17 +161,61 @@ number: if a donor checks it and it is wrong, the whole site loses credibility.
 
 ## E. Two decisions
 
-### 1. The domain — `chrysolitefoundation.ng` is available
+### 1. The domain — the `.ng` names are free; `.com` and `.org` are not
 
-The foundation ran its site there from February 2023 to February 2025. It lapsed and the domain
-is now free to register. Registering it fixes several things at once: the `canonical` tags, the
-social-share URLs and the sitemap currently point at a domain nobody owns.
+**Checked 10 Oct 2026 against the registries directly (RDAP), not a reseller's search box.**
 
-- **Yes, register it** → we point the site at it and everything becomes correct
-- **No, use something else** → tell us the name and we update the URLs
+The `.com` and `.org` are both gone, and both belong to an **unrelated charity of the same name
+in Zimbabwe** — Chrysolite Foundation, Marondera / Chitungwiza, with a UK contact in Scunthorpe.
+Re-confirmed by search on 10 Oct 2026. Do not use either; a donor searching "Chrysolite
+Foundation" will land on them, which is exactly why the `.ng` matters.
 
-Note: `chrysolitefoundation.com` and `.org` both belong to an unrelated charity of the same name
-in Zimbabwe. Do not use either.
+| Domain | Status 10 Oct 2026 | Notes |
+|---|---|---|
+| `chrysolitefoundation.ng` | **available** | what the site already references (41 places) |
+| `chrysolitefoundation.org.ng` | **available** | non-profit extension; see recommendation |
+| `chrysolitefoundation.com.ng` | **available** | cheapest option |
+| `chrysolite.ng` / `chrysolite.org.ng` | **available** | short brand form |
+| `chrysoliteempowerment.org.ng` | **available** | if the legal name is preferred in full |
+| `chrysolitefoundation.com` | taken | Zimbabwe charity, via Wix |
+| `chrysolitefoundation.org` | taken | registered Aug 2025, **expired Aug 2026**, now in the redemption period — not usable |
+| `chrysolite.com.ng` | taken | |
+
+**Recommended: `chrysolitefoundation.org.ng`** — the org's name word for word, plus the one
+Nigerian extension that says *non-profit*. With `.com` and `.org` held by a same-named charity
+elsewhere, the extension is doing real work: it tells a donor which Chrysolite this is.
+
+**Cheapest: `chrysolitefoundation.com.ng`** — same name, roughly half the price.
+
+**On price.** `.org.ng` and `.ng` cost the same, so there is no reason to pick `.ng` to save
+money. `.com.ng` is the only genuinely cheaper tier.
+
+| Extension | Cheapest seen | Typical Nigerian registrar |
+|---|---|---|
+| `.com.ng` | ~$2.50–3.63 / yr | ₦6,250 / yr (MokoHost) |
+| `.ng` | ~$7.38–8.91 / yr | ₦13,250 / yr (MokoHost) |
+| `.org.ng` | ~$9.00 / yr | check in naira at checkout |
+
+**No documents are required.** NiRA's own portal (`register.ng`) lists `.ng`, `.com.ng`,
+`.org.ng`, `.net.ng`, `.i.ng`, `.name.ng` and `.mobi.ng` as **Open** zones — *"An open zone does
+not require documentation, except in special cases."* Only `.edu.ng`, `.sch.ng`, `.gov.ng` and
+`.mil.ng` are Closed. So `.org.ng` will not ask the foundation for proof of non-profit status.
+
+**Where to buy.** Use a NiRA-accredited registrar so the domain is actually held under NiRA rules
+and renews in naira: **TrueHost.com.ng** or **MokoHost** are both accredited and priced in naira.
+Avoid registering through a non-accredited reseller, and avoid dollar-denominated registrars —
+every renewal becomes an exchange-rate gamble.
+
+**One warning about the cheap price.** `.com.ng` first-year prices of $2.50 are loss-leaders;
+check the *renewal* price before committing. TrueHost's `.org.ng` is $9 first year **and** $9
+renewal, which is why it is the pick.
+
+**What registering fixes.** 41 references across 9 files (`canonical`, `og:url`, `og:image`,
+`sitemap.xml`, `robots.txt`) currently point at a domain nobody owns. Give us the name and we
+change all 41 in one pass.
+
+**Optional, if the budget allows.** Registering `.com.ng` as well costs about ₦6,000 a year and
+stops anyone else trading on the name. Not required.
 
 ### 2. How form submissions should reach the foundation
 
