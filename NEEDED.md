@@ -173,7 +173,7 @@ extension alone will not tell a donor which Chrysolite they have found.
 
 | Domain | Status 10 Oct 2026 | Notes |
 |---|---|---|
-| `chrysolitefoundation.ng` | **available** | what the site already references (41 places) |
+| `chrysolitefoundation.ng` | **available** | the recommendation — already the address in the site's files |
 | `chrysolitefoundation.org.ng` | **available** | non-profit extension; see recommendation |
 | `chrysolitefoundation.com.ng` | **available** | cheapest option |
 | `chrysolite.ng` / `chrysolite.org.ng` | **available** | short brand form |
@@ -182,26 +182,37 @@ extension alone will not tell a donor which Chrysolite they have found.
 | `chrysolitefoundation.org` | taken | registered Aug 2025, **expired Aug 2026**, now in the redemption period — not usable |
 | `chrysolite.com.ng` | taken | |
 
-**Recommended: `chrysolite.ng`**
+**Recommended: `chrysolitefoundation.ng`**
 
-The brand, without the legal suffix. Shortest usable form (13 characters), costs the same as
-`.org.ng` (~$8.91 vs ~$9), and does not lock the foundation into "foundation" if it later adds a
-trading arm for the shop.
+The deciding criterion is recognition, not price: **someone seeing the address should know at
+once which organisation it is.** Against five other organisations trading as "Chrysolite", only
+two things do that work — the word *foundation* (which is the name people actually use for this
+one) and `.ng` (which rules out the Zimbabwe charity on `.com`, the Baltimore mission on `.org`
+and the Kenyan consultancy on `.com`).
 
-An earlier draft of this section recommended `chrysolitefoundation.org.ng` on the argument that
-`.org` signals *non-profit*. That argument was weaker than it looked: the About page already
-carries the CAC number, the **Active** status and the certificate image. **The domain does not
-have to prove anything — the site does.** Paying the same money for nine extra characters to get
-"org" into the address is a bad trade.
+It is also already the address in the site's own files, so there is nothing to reconcile.
 
 | Pick | Price/yr | Length | Why |
 |---|---|---|---|
-| **`chrysolite.ng`** | ~$8.91 | 13 | shortest; same price as `.org.ng` |
-| `chrysolite.org.ng` | ~$9.00 | 19 | if the word "org" in the address matters to the board |
-| `chrysolitefoundation.com.ng` | ~$3.63 / ₦6,250 | 27 | cheapest tier; the full name |
-| `chrysolitefoundation.ng` | ~$8.91 | 25 | what the site already references (41 places) |
+| **`chrysolitefoundation.ng`** | ~$8.91 / ₦13,250 | 25 | **primary — the name plus the country** |
+| `chrysolite.ng` | ~$8.91 / ₦13,250 | 13 | short alias, redirects to the primary |
+| `chrysolitefoundation.org.ng` | ~$9.00 | 27 | defensive; catches `.org` typists |
+| `chrysolitefoundation.com.ng` | ~$3.63 / ₦6,250 | 27 | cheapest tier, if price ever matters again |
 
-**"Chrysolite" is a crowded name — this is why the extension alone will not identify you.**
+**Why not `.org.ng` for the primary.** *"foundation"* already carries the non-profit meaning, so
+`chrysolitefoundation.org.ng` says it twice — and it is the `.ng` that actually separates this
+organisation from the other Chrysolites, not the `org`. The About page carries the CAC number,
+the **Active** status and the certificate; the address does not have to prove anything.
+
+**Suggested bundle (~$27/yr ≈ ₦40,000).** `chrysolitefoundation.ng` as the address everywhere,
+`chrysolite.ng` as a short form that redirects to it for business cards, WhatsApp and radio, and
+`chrysolitefoundation.org.ng` held defensively so nobody else takes the obvious sibling. All three
+are available. If the board wants one domain only, take the first.
+
+**Why a bundle is worth it here.** "Chrysolite" is not a distinctive name on the internet — see
+the table below. Holding the obvious neighbours is cheaper than a dispute later.
+
+**"Chrysolite" is a crowded name — five other organisations use it.**
 
 | Who | Where | Domain |
 |---|---|---|
@@ -217,15 +228,13 @@ Two of these are literally called *Chrysolite Foundation*. **Note for §D:** the
 Baltimore mission that has operated in West Africa since 2008. Worth confirming rather than
 inheriting someone else's founding year.
 
-**One spelling warning.** *Chrysolite* is easy to misspell (crysolite, chrisolite, chrysolyte).
-Direct-type traffic will lose some people. This is acceptable because most arrivals come from
-links, WhatsApp forwards and QR codes rather than typing — but it is the one real cost of a
-brand-only domain. Defensive registration of misspellings is not worth the money at this size.
+**One spelling warning, whichever name is chosen.** *Chrysolite* is easy to misspell —
+*crysolite*, *chrisolite*, *chrysolyte*. Some people typing the address from memory will miss.
+This is tolerable because most arrivals come from links, WhatsApp forwards and QR codes rather
+than typing, and because search will still find the site. Registering misspellings defensively is
+not worth the money at this size.
 
-**Optional, if the budget allows.** Registering `chrysolite.org.ng` alongside `chrysolite.ng`
-costs about $9 a year and stops anyone else taking the sibling. Not required.
-
-**On price.** `.org.ng` and `.ng` cost the same, so the choice between them is about length, not
+**On price.** `.org.ng` and `.ng` cost the same, so the choice between them is about wording, not
 money. `.com.ng` is the only genuinely cheaper tier — and it costs the full name in characters.
 
 | Extension | Cheapest seen | Typical Nigerian registrar |
@@ -245,15 +254,17 @@ Avoid registering through a non-accredited reseller, and avoid dollar-denominate
 every renewal becomes an exchange-rate gamble.
 
 **One warning about the cheap price.** `.com.ng` first-year prices of $2.50 are loss-leaders;
-check the *renewal* price before committing. TrueHost's `.org.ng` is $9 first year **and** $9
-renewal, which is why it is the pick.
+check the *renewal* price before committing. TrueHost's `.org.ng` is $9 first year **and** $9 on
+renewal — no first-year bait — which is worth preferring even where the headline price is higher.
 
-**What registering fixes.** 41 references across 9 files (`canonical`, `og:url`, `og:image`,
-`sitemap.xml`, `robots.txt`) currently point at a domain nobody owns. Give us the name and we
-change all 41 in one pass.
+**What registering fixes.** The address appears **29 times across the ten shipped files** — eight
+pages plus `sitemap.xml` and `robots.txt` — in `canonical` tags, `og:url`, `og:image`, the logo
+reference and the sitemap. All of them currently point at a domain nobody owns, which is worse
+than pointing nowhere. (A further 12 mentions live in the project's own `.md` files, which do not
+ship.) Give us the name and we change all of them in one pass.
 
-**Optional, if the budget allows.** Registering `.com.ng` as well costs about ₦6,000 a year and
-stops anyone else trading on the name. Not required.
+**If the recommendation is taken as-is, nothing needs changing** — the site already says
+`chrysolitefoundation.ng`.
 
 ### 2. How form submissions should reach the foundation
 
