@@ -5,4 +5,4 @@ Allow: /
 Disallow: /_draft-custom/
 Disallow: /_oss-preview/
 
-Sitemap: https://chrysolitefoundation.ng/sitemap.xml
+Sitemap: https://chrysolite-foundation.org/sitemap.xml
