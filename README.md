@@ -73,6 +73,22 @@ Defined once as CSS custom properties at the top of `style.css`:
 To re-theme the whole site, change these seven values. Everything else follows.
 There is also a gold accent `#E0A72C` used sparingly in the logo and social card.
 
+### Typography
+Two families, both from Google Fonts, loaded in every page's `<head>`:
+
+- **Fraunces** — headings only: `h2` and the `.display-*` classes.
+- **Inter** — body copy, `h3`, stat numerals, buttons, nav, labels.
+
+The serif is deliberate and was chosen after comparing alternatives — the reasoning is written
+out above the rule in `style.css` so it does not get "tidied away". The short version: the
+site is about handmade work, so the headings should feel made; and leaving Inter on both
+headings and body makes the two read at the same temperature, which is what makes a template
+look generic.
+
+Note the scope. `h3` is **not** serif, and neither are the stat numerals in `.stat-block__num`.
+The serif is for editorial headings, not for numbers or UI chrome — if you widen it to those,
+the page starts to look like a dashboard wearing a serif, which is worse than either.
+
 ---
 
 ## 3. File structure

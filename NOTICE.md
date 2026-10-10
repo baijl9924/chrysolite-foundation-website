@@ -43,11 +43,19 @@ required, obtain a commercial licence from TemplatesJungle or commission a bespo
 | Chart.js | MIT |
 | Ionicons 7.1.0 | MIT |
 | Inter typeface | SIL Open Font License 1.1 |
+| Fraunces typeface | SIL Open Font License 1.1 |
 
 ## Fonts
 
-The site loads **Inter** from Google Fonts. The bundled `fonts/` folder contains the
-template's original icon font and is not referenced by any page — it can be deleted.
+The site loads two families from Google Fonts:
+
+- **Fraunces** — headings (`h2` and the `.display-*` classes). A humanist serif, chosen for
+  warmth; the site is about handmade work and the headings should feel made rather than
+  generated. Fraunces italic is loaded because `.display-2 em` uses it for the accent phrase.
+- **Inter** — everything else: body copy, `h3`, stat numerals, buttons, nav, labels.
+
+The bundled `fonts/` folder contains the template's original icon font and is not referenced by
+any page — it can be deleted.
 
 ## Images
 

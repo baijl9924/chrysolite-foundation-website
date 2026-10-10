@@ -463,6 +463,27 @@ a.btn-yellow:hover,
 .display-2 em {
   color: var(--accent-color);
 }
+
+/* ---- Display typeface ------------------------------------------------------
+   Headings get a warm serif; body and UI stay in Inter. Both families are loaded
+   in each page's <head>, and the Georgia/Times fallback stack is deliberate.
+
+   Why this pairing: the subject of the site is handmade work — crochet, adire,
+   ankara bound by hand — so the headings carry a humanist serif with some warmth.
+   Fraunces was picked over Lora (correct but neutral, no character) and over
+   leaving Inter everywhere (headings and body then read at the same temperature,
+   which is what makes a template look generic). Fraunces italic is used on
+   purpose by `.display-2 em` for the accent phrase, so italic is loaded rather
+   than synthesised.
+
+   Scope: h2 and the display classes only. h3, stat numerals, buttons, nav and
+   body copy stay Inter — the serif is for editorial headings, not for numbers
+   or UI chrome. */
+h2, .h2,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+}
+
 a:hover {
   color: var(--accent-color);
 }
@@ -1159,15 +1180,21 @@ html, body { max-width: 100%; overflow-x: clip; }
   pointer-events: none;
   background:
     linear-gradient(100deg,
-      rgba(8, 24, 14, 0.95) 0%,
-      rgba(11, 33, 20, 0.90) 34%,
-      rgba(16, 46, 27, 0.72) 62%,
-      rgba(18, 52, 31, 0.50) 100%),
+      rgba(8, 24, 14, 0.82) 0%,
+      rgba(11, 33, 20, 0.62) 34%,
+      rgba(16, 46, 27, 0.44) 62%,
+      rgba(18, 52, 31, 0.26) 100%),
     radial-gradient(110% 80% at 82% 28%, rgba(143, 191, 63, 0.16) 0%, transparent 62%);
 }
 #intro.hero-photo .container { position: relative; z-index: 2; }
 /* jarallax paints the <img> behind the section — keep it that way */
 #intro.hero-photo .jarallax-img { z-index: 0; }
+/* the overlay is lighter now, so the copy gets its own scrim to stay legible */
+#intro.hero-photo .section-title h2,
+#intro.hero-photo .section-title p,
+#intro.hero-photo .breadcrumb {
+  text-shadow: 0 2px 16px rgba(8, 24, 14, 0.6), 0 0 3px rgba(8, 24, 14, 0.45);
+}
 
 /* ---- Photo cards ---------------------------------------------------------
    Same footprint as the old .card-dark, but with a photograph and a scrim
