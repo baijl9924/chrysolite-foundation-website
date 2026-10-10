@@ -248,10 +248,29 @@ money. `.com.ng` is the only genuinely cheaper tier — and it costs the full na
 not require documentation, except in special cases."* Only `.edu.ng`, `.sch.ng`, `.gov.ng` and
 `.mil.ng` are Closed. So `.org.ng` will not ask the foundation for proof of non-profit status.
 
-**Where to buy.** Use a NiRA-accredited registrar so the domain is actually held under NiRA rules
-and renews in naira: **TrueHost.com.ng** or **MokoHost** are both accredited and priced in naira.
-Avoid registering through a non-accredited reseller, and avoid dollar-denominated registrars —
-every renewal becomes an exchange-rate gamble.
+**Where to buy — and the payment problem.** This depends on who is paying, and an earlier draft
+of this section got it wrong by naming only Nigerian registrars.
+
+- **Paying from inside Nigeria** → **TrueHost.com.ng** or **MokoHost**, both NiRA-accredited,
+  priced in naira, payable by Nigerian card or bank transfer. `.ng` at MokoHost is ₦13,250.
+- **Paying from outside Nigeria** → the Nigerian registrars above are effectively unusable; they
+  expect a naira transfer or a Nigerian card. Use **Dynadot** instead: `.ng` at **$10.34** and
+  `.org.ng` at **$10.25**, register / renew / transfer all at the same price, and it runs a
+  Chinese-language storefront. International cards and PayPal are accepted.
+- **Avoid** resellers that mark `.ng` up by an order of magnitude — 101domain lists `.org.ng` at
+  $124.99 and INWX at $118.80. Those are the same domain at twelve times the price.
+
+**Do not trust a registrar's availability widget.** Registrars frequently show a name as taken
+when the registry says otherwise, and several do not carry `.ng` sub-zones at all. The
+authoritative check is NiRA's own RDAP server, which IANA lists as the `.ng` authority:
+
+```
+curl -s -o /dev/null -w "%{http_code}\n" https://rdap.nic.net.ng/domain/<name>
+```
+
+`404` means unregistered (available); `200` means registered; **anything else is a failed request,
+not a "taken"** — retry before drawing a conclusion. Verified this way on 10 Oct 2026, with
+`nira.org.ng`, `google.com.ng` and `zenithbank.com.ng` as positive controls returning `200`.
 
 **One warning about the cheap price.** `.com.ng` first-year prices of $2.50 are loss-leaders;
 check the *renewal* price before committing. TrueHost's `.org.ng` is $9 first year **and** $9 on
