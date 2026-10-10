@@ -191,17 +191,27 @@ misrepresents the people the site is about.
 To swap any single image, drop a replacement into `images/photos/` under the same filename; no
 HTML change is needed. Keep the orientation — the site crops with `object-fit: cover`.
 
-### The certificate is real
+### The certificate is real, and the registration is live
 `images/certificate.jpg` is the foundation's actual CAC Certificate of Incorporation, published
 unmodified. It replaced `certificate-placeholder.svg`, which has been deleted.
 
-Two things worth knowing:
+Independently of the document, a search of the [CAC public portal](https://search.cac.gov.ng/) for
+`7008093` returns exactly one result — this foundation, entity type **IT**, registered 8 June 2023,
+**status Active**. The About page carries that status and the date it was checked, because
+"registered" and "still registered" are different claims and a donor can verify the second one.
+
+Three things worth knowing:
 
 - **Do not retouch, crop or enhance it.** A doctored registration document is worse than none.
   If a better copy arrives, replace the file — don't edit it.
-- **It does not name the trustees.** This surprised us and is worth recording: a Nigerian CAC
-  certificate carries the organisation name, registration number, date, registrar and TIN, but
-  not the trustees. Those live in the CAC's own records. So `NEEDED.md` §C is still open.
+- **The certificate does not name the trustees.** A Nigerian CAC certificate carries the
+  organisation name, registration number, date, registrar and TIN — not the trustees.
+- **Neither does the CAC public search.** We assumed it would; it does not. Only Form CAC 1.1 or a
+  paid Certified True Copy holds the names. See `NEEDED.md` §C — it is optional, not blocking.
+
+Note the portal displays the number as `RC - 7008093` while the certificate prints `IT/7008093`.
+Same registration; the About page says so explicitly so a verifier searching the portal is not
+thrown by the difference.
 
 At 765 × 1024 the scan is legible on screen, but only just. The QR code in the bottom-left corner
 is too small to decode from this copy — if the foundation has the original PDF, a higher-resolution
@@ -374,8 +384,9 @@ Once `chrysolitefoundation.ng` is registered and pointed at your host, also upda
 
 - [ ] Portraits for the seven named team members — the cards currently show initials monograms
 - [ ] Confirmation that the October 2023 line-up is still current
-- [ ] The **CAC-registered trustees** by name — **not printed on the certificate**; get them from
-      the CAC public search portal or the foundation's Form CAC 1.1
+- [ ] The **CAC-registered trustees** by name — **not printed on the certificate, and not shown
+      by the CAC public search either**; only Form CAC 1.1 or a paid Certified True Copy has them.
+      **Optional** — the governance section stands on its own without them
 - [ ] A higher-resolution copy of the certificate, if the original PDF still exists
 - [ ] A real photograph for social sharing, to replace `og-cover.svg`
 - [ ] Confirmation of two figures on the About page — "600 children since 2019" and the
@@ -412,6 +423,7 @@ being built and **must be confirmed or removed before launch** — see §10.
 | 18.3M out-of-school children; 10.2M primary, 8.1M secondary; 7.6M girls | UNICEF Nigeria — verified |
 | CAC Incorporated Trustees IT/7008093, incorporated 8 June 2023, CAMA 2020 | CAC certificate — verified, and the document itself is published on the About page |
 | TIN 2620089007465 | CAC certificate — verified |
+| Registration status **Active** | CAC public search portal, query `7008093`, checked 10 Oct 2026 — verified |
 | "Photographs are licensed stock images; we do not publish pictures of the children" | Pixabay Content Licence + the foundation's own decision — stated in the footer of all 8 pages |
 | "100% of these sales contribute to future trainings" | Foundation's Selar store — verified |
 | Email, both phone numbers, Oluyole address | Foundation's own former website, captured 2025-02-24 — verified |

@@ -82,6 +82,12 @@ credited differently — or if anyone is missing — tell us and the cards chang
 The foundation supplied the **CAC Certificate of Incorporation**, and it is now published
 unmodified on the About page (`images/certificate.jpg`), replacing the placeholder that was there.
 
+**And the registration was confirmed independently.** A search of the CAC public portal for
+`7008093` returns exactly one result — this foundation, entity type **IT**, registered 8 June 2023,
+**status Active**, Tax ID 2620089007465. That status line is new to the site and it is worth
+having: "registered" and "still registered" are different claims, and a donor can check the
+second one. The About page now says so, with the date it was checked.
+
 One small thing, if it is easy: the copy we have is 765 × 1024. It is legible on screen but only
 just, and the QR code in the bottom-left corner is too small to decode from it. **If the original
 PDF still exists, a higher-resolution export would be a straight improvement** — same file, just
@@ -92,29 +98,36 @@ annual return or tax-exemption letter.
 
 ---
 
-## C. The registered trustees — still unknown
+## C. The registered trustees — nice to have, not a blocker
 
-The team section is filled in from the *Nigerian Tribune* (§A2 above). What is still missing is a
-different group of people: the **trustees on the CAC register**.
+Two corrections of our own, both worth recording because we got them wrong first.
 
-**Correction to an earlier assumption of ours.** We had written that the certificate would name
-them. It does not. Having now seen the actual document: a Nigerian CAC Certificate of
-Incorporation carries the organisation's name, the community registration number, the date, the
-Registrar-General's name and the TIN — **but not the trustees.** So the certificate does not
-answer this question.
+**We assumed the certificate would name the trustees.** It does not. **We then assumed the CAC
+public search would.** It does not either. Both have now been checked:
 
-Where the names actually are:
+| Source | What it gives | Trustees? |
+|---|---|---|
+| The certificate (`images/certificate.jpg`) | Organisation name, IT/7008093, 8 June 2023, Registrar-General, TIN | ✗ |
+| The [CAC public search](https://search.cac.gov.ng/) for `7008093` | Entity type **IT**, name, `RC - 7008093`, date of registration, **status Active**, Tax ID | ✗ |
 
-- the **CAC public search portal** — https://search.cac.gov.ng/, searched by registration number
-  **IT/7008093** (the search result lists the trustees), or
-- the foundation's own **Form CAC 1.1** (the incorporation application), which names them and
-  which the foundation will have on file
+So the trustee list is not sitting in any source we can reach on our own. The two places it does
+exist are:
 
-Either source works. If it is easier, just type the names and roles into a message in the same
-format as the team list.
+- the foundation's **Form CAC 1.1** — the incorporation application, which names the trustees and
+  which the foundation will have on file, or
+- a **Certified True Copy** of the register entry from the CAC, which is a paid application
 
-They may turn out to be the same people as the delivery team, or they may not. Either answer is
-fine — we just want the published list to be the real one, and we will not guess it.
+**And it is optional.** We want to be clear about that, because we pushed on this harder than it
+deserves. The About page already publishes the certificate, the registration number, the status
+and the search link — a donor can verify the organisation in under a minute without knowing a
+single trustee's name. The team section names the seven people who actually do the work.
+
+So: if the foundation is happy to publish the trustees, send the names and we will add them. If
+it would rather keep them private, that is a perfectly good answer too, and we will simply leave
+the page as it is. Either way nothing is blocked.
+
+One thing we would still like, because it is cheap: **confirmation that the seven people in the
+team section are the current line-up** (§A2).
 
 ---
 
@@ -192,6 +205,7 @@ So nobody re-checks it:
 - ✅ Contact details — real email and both phone numbers, sourced from the foundation's own site
 - ✅ All four forms — functional today via the visitor's email app
 - ✅ CAC registration, TIN, incorporation date — from the certificate
+- ✅ **Registration status Active** — confirmed on the CAC public search, 10 Oct 2026
 - ✅ **The CAC certificate itself** — published unmodified on the About page
 - ✅ Photography — licensed stock images, permanent by decision, disclosed in every footer
 - ✅ Team names and roles — seven people, all traceable to the *Nigerian Tribune*, 7 Oct 2023
