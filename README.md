@@ -7,9 +7,10 @@ non-profit based in Ibadan, Oyo State, Nigeria.
 - **Registration:** CAC Incorporated Trustees · **IT/7008093**
 - **TIN:** 2620089007465
 - **Incorporated:** 8 June 2023 under CAMA 2020 · founded 2019
-- **Address:** Juli Alice Hall, Cilareta Filling Station, Oluyole Estate Road, Oluyole, Ibadan, Oyo State
-- **Phone:** +234 80 67 35 95 96
-- **Email:** info@chrysolitefoundation.ng
+- **Programme office:** Juli Alice Hall, Cilareta Filling Station, Oluyole Estate Road, Oluyole, Ibadan, Oyo State
+- **Registered office (CAC):** NO 1, Oduduwa Road, University of Ibadan, Ibadan
+- **Phone:** +234 80 32 60 21 80 · +234 80 67 35 95 96
+- **Email:** chrysoliteinfo@gmail.com
 
 No build step, no framework, no npm. Open `index.html` and it works. This means it can be
 hosted anywhere — GitHub Pages, Cloudflare Pages, Netlify, or plain shared hosting.
@@ -402,9 +403,51 @@ negative — it holds 100 of Nigeria's 4,963 registered non-profits.
 
 The record can change — re-check before relying on the details above.
 
+### Where the contact details come from
+
+Every contact detail published on this site traces to a source. Nothing is invented.
+
+| Detail | Value | Source |
+|---|---|---|
+| Email | `chrysoliteinfo@gmail.com` | the foundation's own former website, archived 2025-02-24 |
+| Phone | +234 80 32 60 21 80 | same |
+| Phone | +234 80 67 35 95 96 | same |
+| Programme office | Juli Alice Hall, Cilareta Filling Station, Oluyole Estate Road, Oluyole, Ibadan | supplied by the foundation |
+| Registered office | NO 1, Oduduwa Road, University of Ibadan, Ibadan | CAC record, via Goodstack |
+
+The email is deliberately a **Gmail address, not a domain address**. The foundation never had
+domain email — that is what its own site used. Do not "improve" it to `info@…`; an address at a
+domain nobody owns cannot receive mail.
+
+**The website domain.** The foundation used to run a site at `chrysolitefoundation.ng`, live from
+February 2023 to February 2025. The Internet Archive holds 55 captures, including two subdomains —
+`chrysoliteinstitute.chrysolitefoundation.ng` (a training institute with certificate, associate and
+bachelor's course pages) and `chrysoliteng.chrysolitefoundation.ng` (with `ibadan.html`,
+`osogbo.html`, `events.html`). It is now dead:
+
+- no DNS records at all (`NXDOMAIN` for `NS`, `A`, `MX`)
+- NiRA's RDAP returns `404 — No results for query chrysolitefoundation.ng`, while `nira.org.ng`,
+  `google.com.ng` and `cac.gov.ng` all return `200` from the same endpoint — so the 404 means
+  "not registered", not "no such service"
+
+**The domain is available to register.** Until it is, the `canonical`, `og:url`, `og:image` and
+`sitemap.xml` URLs on this site point at a domain nobody owns. Registering it makes all of them
+correct at once.
+
+Do not confuse the foundation with three unrelated organisations that share the name:
+
+| Domain | Organisation |
+|---|---|
+| `chrysolitefoundation.ng` | **this one** — Ibadan, Nigeria · CAC IT/7008093 |
+| `chrysolitefoundation.com` | a Zimbabwe charity (Chitungwiza) |
+| `chrysolitefoundation.org` | the same Zimbabwe charity's former Wix site |
+| `thechrysolitefoundation.org` | a separate organisation |
+
+To re-check any of this: `curl -s "https://rdap.nic.net.ng/domain/chrysolitefoundation.ng"`.
+
 ---
 
 ## 12. Support
 
 Questions about the site itself: whoever built or maintains it.
-Questions about the foundation: **info@chrysolitefoundation.ng** · +234 80 67 35 95 96.
+Questions about the foundation: **chrysoliteinfo@gmail.com** · +234 80 32 60 21 80 · +234 80 67 35 95 96.
