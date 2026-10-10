@@ -57,7 +57,7 @@
            back, but they do have to press send. This is the state the site
            ships in, so that no enquiry is ever silently dropped. */
   var FORM_ENDPOINT = '';                                 // e.g. 'https://formspree.io/f/xxxxxxx'
-  var FALLBACK_EMAIL = 'chrysoliteinfo@gmail.com';
+  var FALLBACK_EMAIL = 'connect@chrysolite-foundation.org';
 
   function fieldLabel(form, name) {
     var el = form.elements[name];
