@@ -54,9 +54,14 @@
        (b) FORM_ENDPOINT is empty -> the form is handed to the visitor's own
            email app as a pre-filled message addressed to FALLBACK_EMAIL.
            Nothing is lost and nothing is sent anywhere behind the visitor's
-           back, but they do have to press send. This is the state the site
-           ships in, so that no enquiry is ever silently dropped. */
-  var FORM_ENDPOINT = '';                                 // e.g. 'https://formspree.io/f/xxxxxxx'
+           back, but they do have to press send.
+
+     The endpoint below is a Formspree form. Note it is SHARED with the
+     Rapha Ministries site, so every submission carries a `_subject` prefixed
+     with the foundation's name and a `_page` field naming the exact page —
+     that is how the two sites' enquiries stay tellable apart in the inbox.
+     If Chrysolite ever gets its own Formspree form, swap the URL here only. */
+  var FORM_ENDPOINT = 'https://formspree.io/f/xoejlrwr';
   var FALLBACK_EMAIL = 'connect@chrysolite-foundation.org';
 
   function fieldLabel(form, name) {
@@ -82,10 +87,17 @@
 
       if (FORM_ENDPOINT) {
         show('Sending\u2026');
+        /* Send FormData so file inputs and every field type survive, but add
+           two identifying fields first. The endpoint is shared with another
+           site, so without these the inbox could not tell which foundation an
+           enquiry came from or which of the four forms it was submitted on. */
+        var payload = new FormData(form);
+        payload.append('_subject', '[Chrysolite] ' + (form.dataset.formName || 'Enquiry'));
+        payload.append('_page', window.location.href);
         fetch(FORM_ENDPOINT, {
           method: 'POST',
           headers: { Accept: 'application/json' },
-          body: new FormData(form)
+          body: payload
         }).then(function (res) {
           if (!res.ok) throw new Error('HTTP ' + res.status);
           show(form.dataset.successMessage || 'Thank you \u2014 your message has been received.');
